@@ -1,0 +1,2590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vivencia Vision Care Clinic | Calbayog City</title>
+<meta name="description" content="Doctor-led eye care and curated eyewear in Calbayog City, Samar. Led by Dr. Cleo Dawn Camarines, O.D.">
+<meta property="og:title" content="Vivencia Vision Care Clinic | Calbayog City">
+<meta property="og:description" content="Clinical eye care meets personal style. Comprehensive eye exams, premium eyewear, and specialist optometry in Calbayog City, Samar.">
+<meta property="og:type" content="website">
+
+<!--
+╔══════════════════════════════════════════════════════════════════╗
+║            📸  IMAGE & VIDEO REPLACEMENT GUIDE                   ║
+╠══════════════════════════════════════════════════════════════════╣
+║  Create these two folders next to index.html:                    ║
+║    /images/   and   /videos/                                     ║
+║                                                                  ║
+║  Then replace each file listed below with your own photo/video.  ║
+║  Just keep the SAME FILENAME and the site updates automatically. ║
+║                                                                  ║
+║  HERO SECTION                                                    ║
+║    images/hero-bg.jpg          ← Full-screen hero background     ║
+║    images/hero-model.jpg       ← Right-side model/frame photo    ║
+║                                                                  ║
+║  ABOUT SECTION                                                   ║
+║    images/doctor.jpg           ← Dr. Cleo portrait photo         ║
+║    images/clinic-interior.jpg  ← Clinic interior shot            ║
+║                                                                  ║
+║  MODEL COLLABORATION VIDEOS                                      ║
+║    videos/collab-1.mp4         ← Collaboration video 1           ║
+║    videos/collab-2.mp4         ← Collaboration video 2           ║
+║    videos/collab-3.mp4         ← Collaboration video 3           ║
+║    images/collab-poster-1.jpg  ← Thumbnail/poster for video 1    ║
+║    images/collab-poster-2.jpg  ← Thumbnail/poster for video 2    ║
+║    images/collab-poster-3.jpg  ← Thumbnail/poster for video 3    ║
+║                                                                  ║
+║  EYEWEAR FRAMES                                                  ║
+║    images/frame-july.jpg       ← JULY frame photo                ║
+║    images/frame-nova.jpg       ← NOVA frame photo                ║
+║    images/frame-alba.jpg       ← ALBA frame photo                ║
+║    images/frame-luna.jpg       ← LUNA frame photo                ║
+║    images/frame-rei.jpg        ← REI frame photo                 ║
+║    images/frame-mira.jpg       ← MIRA frame photo                ║
+║                                                                  ║
+║  CLIENT TESTIMONIALS                                             ║
+║    images/client-1.jpg         ← Client 1 photo                  ║
+║    images/client-2.jpg         ← Client 2 photo                  ║
+║    images/client-3.jpg         ← Client 3 photo                  ║
+║    images/client-4.jpg         ← Client 4 photo                  ║
+║    images/client-5.jpg         ← Client 5 photo                  ║
+║                                                                  ║
+║  GALLERY SECTION                                                 ║
+║    images/gallery-1.jpg        ← Gallery image 1                 ║
+║    images/gallery-2.jpg        ← Gallery image 2                 ║
+║    images/gallery-3.jpg        ← Gallery image 3                 ║
+║    images/gallery-4.jpg        ← Gallery image 4                 ║
+║    images/gallery-5.jpg        ← Gallery image 5                 ║
+║    images/gallery-6.jpg        ← Gallery image 6                 ║
+╚══════════════════════════════════════════════════════════════════╝
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+<style>
+/* ===========================
+   BRAND TOKENS
+=========================== */
+:root {
+  --mocha-dark:  #3B1F0D;
+  --mocha-mid:   #6B3A1F;
+  --mocha-light: #A0683A;
+  --sand:        #C4A882;
+  --cream:       #F5EFE6;
+  --cream-warm:  #EDE3D4;
+  --cream-deep:  #D9C8B0;
+  --white-warm:  #FDFAF6;
+  --black-soft:  #0D0806;
+
+  /* 3D depth system */
+  --shadow-sm:  0 4px 16px rgba(59,31,13,0.10);
+  --shadow-md:  0 12px 40px rgba(59,31,13,0.14);
+  --shadow-lg:  0 28px 72px rgba(59,31,13,0.20);
+  --shadow-xl:  0 48px 120px rgba(59,31,13,0.28);
+}
+
+/* ===========================
+   BASE RESET
+=========================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.75;
+  background: var(--white-warm);
+  color: var(--mocha-dark);
+  overflow-x: hidden;
+  cursor: none;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* IMAGE PLACEHOLDER — shows a styled box when image is missing */
+.img-wrap {
+  position: relative;
+  overflow: hidden;
+  background: var(--cream-warm);
+}
+.img-wrap img {
+  transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+/* Shows a label overlay on broken images */
+.img-wrap::after {
+  content: attr(data-label);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sand);
+  background: var(--cream-warm);
+  /* Only visible if img fails */
+  pointer-events: none;
+  z-index: 0;
+}
+.img-wrap img { position: relative; z-index: 1; }
+
+@media (max-width: 600px) { body { cursor: auto; } }
+
+/* ===========================
+   CUSTOM CURSOR
+=========================== */
+#c-dot {
+  width: 10px; height: 10px;
+  background: var(--mocha-dark);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%,-50%);
+  mix-blend-mode: multiply;
+  transition: width .2s, height .2s;
+}
+#c-ring {
+  width: 38px; height: 38px;
+  border: 1.5px solid rgba(59,31,13,.45);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%,-50%);
+}
+body.cur-hover #c-dot { width: 22px; height: 22px; }
+body.cur-hover #c-ring { width: 60px; height: 60px; border-color: rgba(59,31,13,.25); }
+@media (max-width:600px) { #c-dot,#c-ring { display:none; } }
+
+/* ===========================
+   SCROLL REVEAL
+=========================== */
+.reveal        { opacity:0; transform:translateY(40px);  transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+.reveal-left   { opacity:0; transform:translateX(-48px); transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+.reveal-right  { opacity:0; transform:translateX(48px);  transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+.reveal-scale  { opacity:0; transform:scale(.92);        transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+.revealed { opacity:1 !important; transform:none !important; }
+.d1{transition-delay:.10s} .d2{transition-delay:.20s} .d3{transition-delay:.30s}
+.d4{transition-delay:.40s} .d5{transition-delay:.50s} .d6{transition-delay:.60s}
+
+/* ===========================
+   TYPOGRAPHY HELPERS
+=========================== */
+.eyebrow {
+  font-family:'DM Sans',sans-serif;
+  font-size:10px; font-weight:500;
+  letter-spacing:.28em; text-transform:uppercase;
+  color:var(--sand);
+  display:flex; align-items:center; gap:14px;
+  margin-bottom:18px;
+}
+.eyebrow::before {
+  content:''; display:block;
+  width:36px; height:1px; background:var(--sand);
+}
+.eyebrow.center { justify-content:center; }
+.eyebrow.center::before { display:none; }
+
+h2.display {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(40px,4vw,58px);
+  font-weight:300; line-height:1.08;
+  color:var(--mocha-dark);
+  margin-bottom:24px;
+}
+h2.display em { font-style:italic; color:var(--mocha-light); }
+h2.display.light { color:var(--cream); }
+h2.display.light em { color:var(--sand); }
+
+.body-text {
+  font-family:'DM Sans',sans-serif;
+  font-size:15px; font-weight:300;
+  color:var(--mocha-mid); line-height:1.8;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+.btn {
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:'DM Sans',sans-serif;
+  font-size:11px; font-weight:500;
+  letter-spacing:.16em; text-transform:uppercase;
+  padding:13px 28px; border-radius:100px;
+  border:none; cursor:none;
+  text-decoration:none;
+  transition:all .3s cubic-bezier(.16,1,.3,1);
+  white-space:nowrap;
+}
+.btn-dark { background:var(--mocha-dark); color:var(--white-warm); box-shadow:0 4px 20px rgba(59,31,13,.25); }
+.btn-dark:hover { background:var(--mocha-mid); transform:translateY(-2px); box-shadow:0 10px 32px rgba(59,31,13,.32); }
+.btn-outline { background:transparent; color:var(--mocha-dark); border:1.5px solid var(--mocha-dark); }
+.btn-outline:hover { background:var(--mocha-dark); color:var(--white-warm); transform:translateY(-2px); }
+.btn-cream { background:var(--cream); color:var(--mocha-dark); }
+.btn-cream:hover { background:var(--white-warm); transform:translateY(-2px); box-shadow:var(--shadow-md); }
+.arrow-link {
+  font-family:'DM Sans',sans-serif; font-size:13px; font-weight:400;
+  color:var(--mocha-mid); text-decoration:none;
+  display:inline-flex; align-items:center; gap:8px;
+  transition:gap .25s, color .2s;
+}
+.arrow-link:hover { gap:14px; color:var(--mocha-dark); }
+
+/* ===========================
+   NAVIGATION
+=========================== */
+nav#nav {
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:22px 64px;
+  transition:padding .3s, background .4s, box-shadow .4s, backdrop-filter .4s;
+}
+nav#nav.scrolled {
+  background:rgba(253,250,246,.93);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  box-shadow:0 1px 0 rgba(59,31,13,.07);
+  padding:14px 64px;
+}
+.logo { text-decoration:none; display:flex; flex-direction:column; gap:1px; }
+.logo-top {
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px; font-weight:400;
+  letter-spacing:.12em; color:var(--mocha-dark);
+  line-height:1;
+}
+.logo-sub {
+  font-family:'DM Sans',sans-serif;
+  font-size:8.5px; font-weight:500;
+  letter-spacing:.28em; text-transform:uppercase;
+  color:var(--mocha-light);
+}
+.nav-links { display:flex; gap:32px; list-style:none; }
+.nav-links a {
+  font-family:'DM Sans',sans-serif;
+  font-size:11.5px; font-weight:400;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--mocha-mid); text-decoration:none;
+  position:relative; padding-bottom:3px;
+}
+.nav-links a::after {
+  content:''; position:absolute;
+  bottom:0; left:0; right:0; height:1px;
+  background:var(--mocha-dark);
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .3s;
+}
+.nav-links a:hover { color:var(--mocha-dark); }
+.nav-links a:hover::after { transform:scaleX(1); }
+.hamburger {
+  display:none; flex-direction:column;
+  gap:5px; background:none; border:none; cursor:none; padding:4px;
+}
+.hamburger span { display:block; width:24px; height:1.5px; background:var(--mocha-dark); transition:.3s; }
+
+@media (max-width:900px) {
+  nav#nav { padding:16px 28px; }
+  nav#nav.scrolled { padding:12px 28px; }
+  .nav-links, .nav-cta-wrap { display:none; }
+  .hamburger { display:flex; }
+}
+
+/* Mobile menu */
+.mob-menu {
+  position:fixed; inset:0;
+  background:var(--mocha-dark); z-index:2000;
+  display:none; flex-direction:column;
+  align-items:center; justify-content:center;
+  opacity:0; transition:opacity .35s;
+}
+.mob-menu.open { display:flex; opacity:1; }
+.mob-close {
+  position:absolute; top:24px; right:28px;
+  background:none; border:none;
+  color:var(--cream); font-size:36px; cursor:none; line-height:1;
+}
+.mob-menu a {
+  font-family:'Cormorant Garamond',serif;
+  font-size:46px; font-style:italic; font-weight:300;
+  color:var(--cream); text-decoration:none;
+  margin-bottom:36px; opacity:.9;
+  transition:opacity .2s;
+}
+.mob-menu a:hover { opacity:.6; }
+
+/* ===========================
+   HERO  —  3-D PARALLAX
+=========================== */
+#hero {
+  height:100vh; min-height:680px;
+  position:relative; overflow:hidden;
+  display:grid; grid-template-columns:1fr 1fr;
+}
+
+/* Parallax layer container */
+.hero-parallax {
+  position:absolute; inset:0;
+  transform-style:preserve-3d;
+  pointer-events:none;
+}
+
+/* LEFT */
+.hero-left {
+  position:relative; z-index:4;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:130px 56px 100px 80px;
+  background:var(--cream);
+}
+/* Grain texture overlay on left panel */
+.hero-left::before {
+  content:''; position:absolute; inset:0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:.5; pointer-events:none; z-index:0;
+}
+.hero-left > * { position:relative; z-index:1; }
+
+.h-eyebrow {
+  font-family:'DM Sans',sans-serif;
+  font-size:10px; font-weight:500;
+  letter-spacing:.3em; text-transform:uppercase;
+  color:var(--sand); margin-bottom:30px;
+  opacity:0; animation:fadeUp .8s .3s forwards;
+}
+.hero-title { margin-bottom:28px; }
+.hero-line { display:block; overflow:hidden; }
+.hero-line-inner {
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(64px,7.5vw,100px);
+  font-weight:300; line-height:1.02;
+  color:var(--mocha-dark);
+  transform:translateY(105%);
+  animation:slideUp .95s forwards cubic-bezier(.16,1,.3,1);
+}
+.hero-line:nth-child(1) .hero-line-inner { animation-delay:.48s; }
+.hero-line:nth-child(2) .hero-line-inner { animation-delay:.62s; }
+.hero-line:nth-child(3) .hero-line-inner { animation-delay:.76s; }
+.hero-em { font-style:italic; color:var(--mocha-light); }
+
+.hero-desc {
+  font-family:'DM Sans',sans-serif;
+  font-size:15px; font-weight:300;
+  color:var(--mocha-mid); max-width:360px;
+  line-height:1.75; margin-bottom:36px;
+  opacity:0; animation:fadeUp .8s 1.08s forwards;
+}
+.hero-actions {
+  display:flex; align-items:center; gap:28px; flex-wrap:wrap;
+  opacity:0; animation:fadeUp .8s 1.26s forwards;
+}
+
+/* 3-D floating card on left panel */
+.hero-float-badge {
+  position:absolute; bottom:52px; left:80px;
+  background:var(--white-warm);
+  border-radius:20px; padding:18px 22px;
+  box-shadow:0 20px 60px rgba(59,31,13,.14), 0 4px 12px rgba(59,31,13,.06);
+  display:flex; align-items:center; gap:14px;
+  opacity:0; animation:fadeUp .9s 1.5s forwards;
+  transform-style:preserve-3d;
+  z-index:5;
+}
+.hfb-dot {
+  width:10px; height:10px; border-radius:50%;
+  background:#22c55e;
+  box-shadow:0 0 0 4px rgba(34,197,94,.18);
+  animation:pulseGreen 2s infinite;
+}
+@keyframes pulseGreen {
+  0%,100%{box-shadow:0 0 0 4px rgba(34,197,94,.18);}
+  50%{box-shadow:0 0 0 8px rgba(34,197,94,.06);}
+}
+.hfb-text { font-family:'DM Sans',sans-serif; font-size:13px; font-weight:400; color:var(--mocha-dark); }
+.hfb-sub { font-family:'DM Sans',sans-serif; font-size:10px; font-weight:300; color:var(--sand); letter-spacing:.06em; }
+
+/* RIGHT */
+.hero-right {
+  position:relative; overflow:hidden;
+  clip-path:polygon(7% 0, 100% 0, 100% 100%, 0% 100%);
+  animation:heroReveal 1.5s ease-out forwards;
+}
+@keyframes heroReveal {
+  from{clip-path:inset(0 100% 0 0);}
+  to{clip-path:inset(0 0% 0 0);}
+}
+
+/* 📷 HERO RIGHT IMAGE — replace images/hero-model.jpg */
+.hero-right-img {
+  position:absolute; inset:0;
+}
+.hero-right-img img { width:100%; height:100%; object-fit:cover; object-position:center top; }
+.hero-right-img::after {
+  content:'Add your model / frame photo here → images/hero-model.jpg';
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  text-align:center; padding:40px;
+  font-family:'DM Sans',sans-serif; font-size:11px;
+  font-weight:400; letter-spacing:.12em; text-transform:uppercase;
+  color:rgba(245,239,230,.4);
+  background:linear-gradient(135deg,#6B3A1F 0%,#3B1F0D 60%,#1A0905 100%);
+  z-index:0;
+}
+.hero-right-img img { position:relative; z-index:1; }
+
+/* Dark gradient overlay on hero right */
+.hero-right-overlay {
+  position:absolute; inset:0; z-index:2;
+  background:linear-gradient(to right, rgba(59,31,13,.5) 0%, transparent 60%),
+             linear-gradient(to top, rgba(10,4,1,.6) 0%, transparent 50%);
+}
+/* Watermark */
+.hero-wm {
+  position:absolute; bottom:-24px; right:-8px; z-index:3;
+  font-family:'Cormorant Garamond',serif;
+  font-size:160px; font-weight:300;
+  color:rgba(245,239,230,.05); line-height:1;
+  pointer-events:none; user-select:none;
+}
+/* Rotating badge */
+.hero-badge {
+  position:absolute; bottom:44px; right:44px; z-index:4;
+  width:92px; height:92px;
+  background:var(--white-warm); border-radius:50%;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center; text-align:center;
+  animation:spin 22s linear infinite;
+  box-shadow:0 8px 32px rgba(0,0,0,.25);
+}
+@keyframes spin { to{transform:rotate(360deg);} }
+.hero-badge-text {
+  font-family:'DM Sans',sans-serif;
+  font-size:7.5px; font-weight:500;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:var(--mocha-dark); line-height:1.7;
+}
+/* Doctor credit */
+.hero-credit {
+  position:absolute; bottom:28px; left:36px; z-index:4;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic; font-size:13px;
+  color:rgba(245,239,230,.55);
+  opacity:0; animation:fadeUp .8s 1.7s forwards;
+}
+/* Scroll indicator */
+.scroll-ind {
+  position:absolute; bottom:40px; left:50%;
+  transform:translateX(-50%); z-index:10;
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+}
+.scroll-line {
+  width:1px; height:52px;
+  background:linear-gradient(to bottom, var(--mocha-light), transparent);
+  animation:pulseOp 2.2s ease-in-out infinite;
+}
+@keyframes pulseOp{0%,100%{opacity:1;}50%{opacity:.25;}}
+.scroll-lbl {
+  font-family:'DM Sans',sans-serif; font-size:9px;
+  font-weight:400; letter-spacing:.3em;
+  text-transform:uppercase; color:var(--mocha-light);
+}
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(22px);} to{opacity:1;transform:translateY(0);} }
+@keyframes slideUp { from{transform:translateY(105%);} to{transform:translateY(0);} }
+
+@media (max-width:900px) {
+  #hero { grid-template-columns:1fr; grid-template-rows:1fr 320px; }
+  .hero-left { padding:110px 32px 80px; }
+  .hero-right { clip-path:none; }
+  .hero-float-badge,.scroll-ind { display:none; }
+}
+@media (max-width:600px) {
+  .hero-left { padding:96px 24px 56px; }
+  .hero-line-inner { font-size:54px; }
+  .hero-actions { flex-direction:column; align-items:flex-start; gap:14px; }
+}
+
+/* ===========================
+   MARQUEE
+=========================== */
+.marquee-wrap {
+  background:var(--mocha-dark); padding:13px 0; overflow:hidden;
+}
+.marquee-track {
+  display:inline-flex; gap:0;
+  animation:marqueeAnim 30s linear infinite;
+}
+.marquee-track span {
+  font-family:'DM Sans',sans-serif;
+  font-size:10.5px; font-weight:400;
+  letter-spacing:.22em; text-transform:uppercase;
+  color:rgba(245,239,230,.55); padding:0 6px;
+  white-space:nowrap;
+}
+.marquee-track .dia { color:var(--sand) !important; padding:0 16px !important; }
+@keyframes marqueeAnim {
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+
+/* ===========================
+   ABOUT
+=========================== */
+#about {
+  padding:120px 80px;
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:80px; align-items:center;
+  background:var(--white-warm);
+}
+.about-img-stack {
+  position:relative; height:580px;
+}
+/* 📷 Main doctor image → images/doctor.jpg */
+.about-img-main {
+  position:absolute;
+  top:0; left:0; right:50px; bottom:80px;
+  border-radius:24px; overflow:hidden;
+  box-shadow:var(--shadow-xl);
+}
+/* 📷 Clinic interior image → images/clinic-interior.jpg */
+.about-img-accent {
+  position:absolute;
+  bottom:0; right:0; width:55%; height:52%;
+  border-radius:20px; overflow:hidden;
+  border:6px solid var(--white-warm);
+  box-shadow:var(--shadow-lg);
+}
+.about-img-main .img-placeholder-box,
+.about-img-accent .img-placeholder-box {
+  width:100%; height:100%;
+  background:var(--cream-warm);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'DM Sans',sans-serif; font-size:10px;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--sand);
+}
+/* Small floating stats card */
+.about-float-card {
+  position:absolute;
+  top:48%; left:-24px;
+  background:var(--mocha-dark);
+  border-radius:20px; padding:22px 26px;
+  box-shadow:var(--shadow-lg);
+  z-index:3; min-width:180px;
+}
+.afc-num {
+  font-family:'Cormorant Garamond',serif;
+  font-size:46px; font-weight:300; color:var(--cream); line-height:1;
+  margin-bottom:4px;
+}
+.afc-lbl {
+  font-family:'DM Sans',sans-serif; font-size:10px;
+  font-weight:400; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--sand);
+}
+.about-body p { margin-bottom:18px; }
+.about-stats-row {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:0; margin-top:40px;
+  border-top:1px solid var(--cream-deep);
+}
+.stat-cell {
+  padding:22px 0;
+  border-bottom:1px solid var(--cream-deep);
+}
+.stat-cell:nth-child(odd) { border-right:1px solid var(--cream-deep); padding-right:20px; }
+.stat-cell:nth-child(even) { padding-left:20px; }
+.stat-num {
+  font-family:'Cormorant Garamond',serif;
+  font-size:46px; font-weight:300; color:var(--mocha-dark);
+  line-height:1; margin-bottom:4px;
+}
+.stat-lbl {
+  font-family:'DM Sans',sans-serif; font-size:10px;
+  font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--sand);
+}
+
+@media (max-width:900px) {
+  #about { grid-template-columns:1fr; padding:72px 32px; gap:56px; }
+  .about-img-stack { height:420px; }
+  .about-float-card { left:8px; }
+}
+@media (max-width:600px) {
+  #about { padding:60px 24px; }
+  .about-img-stack { height:320px; }
+  .about-img-accent { display:none; }
+}
+
+/* ===========================
+   WHY CHOOSE US — 3D Cards
+=========================== */
+#why {
+  padding:100px 80px;
+  background:var(--cream);
+  overflow:hidden; position:relative;
+}
+#why .wm {
+  position:absolute; top:0; right:-40px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:280px; font-weight:300;
+  color:rgba(59,31,13,.035); line-height:1;
+  pointer-events:none; user-select:none;
+}
+.why-header { text-align:center; margin-bottom:60px; }
+.why-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+}
+/* 3D tilt card base */
+.tilt-card {
+  background:var(--white-warm);
+  border-radius:22px; padding:40px 34px;
+  transform-style:preserve-3d;
+  transition:box-shadow .4s;
+  position:relative; cursor:none;
+  will-change:transform;
+}
+.tilt-card:hover { box-shadow:var(--shadow-xl); }
+.tilt-card.dark-card {
+  background:var(--mocha-dark); grid-row:span 1;
+}
+/* Inner content lifts via translateZ */
+.tilt-inner {
+  transform:translateZ(20px);
+  transform-style:preserve-3d;
+}
+.why-icon {
+  width:52px; height:52px;
+  background:var(--cream-warm);
+  border-radius:16px; margin-bottom:22px;
+  display:flex; align-items:center; justify-content:center;
+}
+.tilt-card.dark-card .why-icon { background:rgba(245,239,230,.12); }
+.why-title {
+  font-family:'DM Sans',sans-serif;
+  font-size:16px; font-weight:500;
+  color:var(--mocha-dark); margin-bottom:10px;
+}
+.tilt-card.dark-card .why-title { color:var(--cream); }
+.why-desc {
+  font-family:'DM Sans',sans-serif;
+  font-size:13px; font-weight:300;
+  color:var(--sand); line-height:1.72;
+}
+.tilt-card.dark-card .why-desc { color:rgba(245,239,230,.65); }
+
+@media (max-width:900px) {
+  #why { padding:72px 32px; }
+  .why-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:600px) {
+  #why { padding:60px 24px; }
+  .why-grid { grid-template-columns:1fr; }
+}
+
+/* ===========================
+   SERVICES
+=========================== */
+#services {
+  padding:100px 80px;
+  background:var(--white-warm);
+}
+.services-header { margin-bottom:60px; }
+.services-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:22px;
+}
+.svc-card {
+  background:var(--cream);
+  border-radius:22px; overflow:hidden;
+  transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s;
+  cursor:none; position:relative;
+}
+.svc-card::after {
+  content:''; position:absolute;
+  bottom:0; left:0; right:0; height:3px;
+  background:linear-gradient(to right, var(--mocha-light), var(--sand));
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .35s;
+}
+.svc-card:hover { transform:translateY(-8px); box-shadow:var(--shadow-lg); }
+.svc-card:hover::after { transform:scaleX(1); }
+.svc-card.featured-svc { background:var(--mocha-dark); }
+.svc-body { padding:32px 28px 28px; }
+.svc-icon {
+  width:44px; height:44px;
+  background:var(--cream-warm);
+  border-radius:13px; margin-bottom:20px;
+  display:flex; align-items:center; justify-content:center;
+}
+.svc-card.featured-svc .svc-icon { background:rgba(245,239,230,.12); }
+.svc-name {
+  font-family:'DM Sans',sans-serif;
+  font-size:16px; font-weight:500;
+  color:var(--mocha-dark); margin-bottom:8px;
+}
+.svc-card.featured-svc .svc-name { color:var(--cream); }
+.svc-desc {
+  font-family:'DM Sans',sans-serif;
+  font-size:13px; font-weight:300;
+  color:var(--sand); line-height:1.7;
+}
+.svc-card.featured-svc .svc-desc { color:rgba(245,239,230,.68); }
+
+@media (max-width:900px) {
+  #services { padding:72px 32px; }
+  .services-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:600px) {
+  #services { padding:60px 24px; }
+  .services-grid { grid-template-columns:1fr; }
+}
+
+/* ===========================
+   MODEL COLLABORATION — VIDEO
+=========================== */
+#collabs {
+  padding:100px 80px;
+  background:var(--mocha-dark);
+  position:relative; overflow:hidden;
+}
+/* Grain overlay */
+#collabs::before {
+  content:''; position:absolute; inset:0; z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events:none; opacity:.6;
+}
+#collabs > * { position:relative; z-index:1; }
+.collabs-header { margin-bottom:56px; }
+.collabs-grid {
+  display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:20px;
+  align-items:stretch;
+}
+
+/* ╔══════════════════════════╗
+   ║  VIDEO REPLACEMENT       ║
+   ║  Change src="videos/..." ║
+   ╚══════════════════════════╝ */
+.video-card {
+  border-radius:22px; overflow:hidden;
+  position:relative; cursor:none;
+  background:rgba(255,255,255,.05);
+  transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s;
+}
+.video-card:hover { transform:translateY(-6px); box-shadow:0 32px 80px rgba(0,0,0,.5); }
+.video-card-inner {
+  position:relative; width:100%; height:100%; min-height:320px;
+}
+.video-card:nth-child(1) .video-card-inner { min-height:420px; }
+
+/* Video element — change src to your video file */
+.video-card video {
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+}
+/* Poster placeholder (shown before video plays / if no video) */
+.video-poster {
+  position:absolute; inset:0; z-index:1;
+  background:rgba(59,31,13,.35);
+}
+.video-poster img {
+  width:100%; height:100%; object-fit:cover;
+}
+/* Gradient over poster */
+.video-poster::after {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(10,4,1,.75) 0%, transparent 55%);
+}
+/* Play button overlay */
+.play-btn {
+  position:absolute; inset:0; z-index:3;
+  display:flex; align-items:center; justify-content:center;
+}
+.play-circle {
+  width:60px; height:60px; border-radius:50%;
+  background:rgba(253,250,246,.15);
+  backdrop-filter:blur(10px);
+  border:1.5px solid rgba(245,239,230,.35);
+  display:flex; align-items:center; justify-content:center;
+  transition:transform .3s, background .3s;
+}
+.play-circle svg { margin-left:4px; }
+.video-card:hover .play-circle {
+  transform:scale(1.1);
+  background:rgba(253,250,246,.25);
+}
+/* Caption on video card */
+.video-caption {
+  position:absolute; bottom:0; left:0; right:0; z-index:4;
+  padding:24px 24px 22px;
+}
+.vc-model {
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic; font-size:20px; font-weight:300;
+  color:var(--cream); line-height:1; margin-bottom:4px;
+}
+.vc-tag {
+  font-family:'DM Sans',sans-serif; font-size:10px;
+  font-weight:400; letter-spacing:.18em; text-transform:uppercase;
+  color:rgba(245,239,230,.5);
+}
+
+/* No-video placeholder style */
+.video-no-src {
+  position:absolute; inset:0;
+  background:linear-gradient(135deg,rgba(107,58,31,.6),rgba(59,31,13,.85));
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:12px;
+  z-index:2;
+}
+.video-no-src span {
+  font-family:'DM Sans',sans-serif; font-size:10px;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:rgba(245,239,230,.4); text-align:center; padding:0 24px;
+}
+
+@media (max-width:900px) {
+  #collabs { padding:72px 32px; }
+  .collabs-grid { grid-template-columns:1fr; }
+  .video-card-inner { min-height:300px !important; }
+}
+@media (max-width:600px) {
+  #collabs { padding:60px 24px; }
+}
+
+/* ===========================
+   EYEWEAR COLLECTION
+=========================== */
+#eyewear {
+  padding:100px 80px;
+  background:var(--cream);
+}
+.eyewear-intro {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:60px; align-items:end; margin-bottom:44px;
+}
+.pkg-pills { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+.pkg-pill {
+  background:var(--white-warm);
+  border:1px solid var(--cream-deep);
+  border-radius:100px; padding:5px 14px;
+  font-family:'DM Sans',sans-serif; font-size:11px;
+  font-weight:500; color:var(--mocha-mid); letter-spacing:.06em;
+}
+.filter-bar { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:36px; }
+.fb { /* filter button */
+  font-family:'DM Sans',sans-serif; font-size:11px;
+  font-weight:400; letter-spacing:.1em; text-transform:uppercase;
+  padding:8px 20px; border-radius:100px;
+  border:1px solid var(--cream-deep);
+  background:transparent; color:var(--sand); cursor:none;
+  transition:all .25s;
+}
+.fb:hover { border-color:var(--mocha-light); color:var(--mocha-dark); }
+.fb.active { background:var(--mocha-dark); color:var(--cream); border-color:var(--mocha-dark); }
+
+.frames-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.frame-card {
+  background:var(--white-warm);
+  border-radius:22px; overflow:hidden;
+  transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s;
+  cursor:none;
+}
+.frame-card:hover { transform:translateY(-10px); box-shadow:var(--shadow-xl); }
+.frame-card.hidden { display:none; }
+
+/* ╔══════════════════════════════╗
+   ║  FRAME IMAGE ZONE            ║
+   ║  Replace images/frame-X.jpg  ║
+   ╚══════════════════════════════╝ */
+.frame-img-zone {
+  height:210px; position:relative; overflow:hidden;
+  background:var(--cream-warm);
+}
+.frame-img-zone img {
+  width:100%; height:100%; object-fit:cover; object-position:center;
+  transition:transform .5s cubic-bezier(.16,1,.3,1);
+}
+.frame-card:hover .frame-img-zone img { transform:scale(1.07); }
+/* Placeholder text when no image */
+.frame-img-zone .frame-img-ph {
+  position:absolute; inset:0; z-index:0;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'DM Sans',sans-serif; font-size:10px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--sand);
+}
+.frame-img-zone img { position:relative; z-index:1; }
+.frame-badge-abs {
+  position:absolute; top:14px; left:14px; z-index:2;
+  font-family:'DM Sans',sans-serif; font-size:9px;
+  font-weight:500; letter-spacing:.14em; text-transform:uppercase;
+  padding:4px 10px; border-radius:100px;
+}
+.badge-new { background:var(--mocha-dark); color:var(--cream); }
+.badge-bundle { background:var(--white-warm); color:var(--mocha-light); }
+
+.frame-body { padding:20px 22px 22px; }
+.frame-coll-lbl {
+  font-family:'DM Sans',sans-serif; font-size:9px;
+  font-weight:400; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--sand); margin-bottom:3px;
+}
+.frame-name {
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px; font-weight:300; color:var(--mocha-dark);
+  line-height:1; margin-bottom:3px;
+}
+.frame-type {
+  font-family:'DM Sans',sans-serif; font-size:12px;
+  font-weight:300; color:var(--sand); margin-bottom:12px;
+}
+.swatches { display:flex; gap:7px; margin-bottom:14px; }
+.sw {
+  width:17px; height:17px; border-radius:50%; border:none;
+  cursor:none; padding:0;
+  outline:2px solid transparent; outline-offset:3px;
+  transition:outline .2s;
+}
+.sw.active { outline:2px solid var(--mocha-dark); }
+.frame-footer {
+  display:flex; align-items:center; justify-content:space-between;
+  padding-top:14px; border-top:1px solid var(--cream-deep);
+}
+.frame-incl {
+  font-family:'DM Sans',sans-serif; font-size:10px;
+  font-weight:400; letter-spacing:.1em; text-transform:uppercase; color:var(--sand);
+}
+
+/* Package banner */
+.pkg-banner {
+  background:var(--mocha-dark);
+  border-radius:24px; padding:48px 60px;
+  display:flex; align-items:center;
+  justify-content:space-between; gap:40px;
+  flex-wrap:wrap; margin-top:48px;
+}
+.pkg-tagline {
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic; font-size:32px; font-weight:300;
+  color:var(--cream); flex:1; min-width:240px;
+}
+.pkg-items { display:flex; gap:24px; flex-wrap:wrap; }
+.pkg-item {
+  display:flex; flex-direction:column;
+  align-items:center; gap:6px;
+}
+.pkg-icon {
+  width:46px; height:46px; background:rgba(245,239,230,.1);
+  border-radius:13px; display:flex;
+  align-items:center; justify-content:center;
+}
+.pkg-lbl {
+  font-family:'DM Sans',sans-serif; font-size:10px;
+  font-weight:500; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--sand); text-align:center;
+}
+
+@media (max-width:900px) {
+  #eyewear { padding:72px 32px; }
+  .eyewear-intro { grid-template-columns:1fr; gap:24px; }
+  .frames-grid { grid-template-columns:1fr 1fr; }
+  .pkg-banner { padding:36px 28px; }
+}
+@media (max-width:600px) {
+  #eyewear { padding:60px 24px; }
+  .frames-grid { grid-template-columns:1fr; }
+}
+
+/* ===========================
+   GALLERY SECTION — 3D grid
+=========================== */
+#gallery {
+  padding:100px 80px;
+  background:var(--white-warm);
+}
+.gallery-header { margin-bottom:52px; }
+.gallery-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:repeat(2,260px);
+  gap:16px;
+}
+/* 📷 Gallery images → images/gallery-1.jpg … gallery-6.jpg */
+.gallery-cell {
+  border-radius:20px; overflow:hidden;
+  position:relative; cursor:none;
+}
+.gallery-cell:nth-child(1) { grid-row:span 2; }
+.gallery-cell img {
+  width:100%; height:100%; object-fit:cover;
+  transition:transform .55s cubic-bezier(.16,1,.3,1);
+}
+.gallery-cell:hover img { transform:scale(1.06); }
+.gallery-cell .gallery-ph {
+  position:absolute; inset:0;
+  background:var(--cream-warm);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'DM Sans',sans-serif; font-size:10px;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--sand);
+  z-index:0;
+}
+.gallery-cell img { position:relative; z-index:1; }
+/* Hover overlay */
+.gallery-cell::after {
+  content:''; position:absolute; inset:0; z-index:2;
+  background:rgba(59,31,13,.0);
+  transition:background .35s;
+}
+.gallery-cell:hover::after { background:rgba(59,31,13,.12); }
+
+@media (max-width:900px) {
+  #gallery { padding:72px 32px; }
+  .gallery-grid { grid-template-columns:1fr 1fr; grid-template-rows:auto; }
+  .gallery-cell:nth-child(1) { grid-row:span 1; }
+  .gallery-cell { height:220px; }
+}
+@media (max-width:600px) {
+  #gallery { padding:60px 24px; }
+  .gallery-grid { grid-template-columns:1fr; }
+  .gallery-cell { height:200px; }
+}
+
+/* ===========================
+   TESTIMONIALS — EXPANDED
+=========================== */
+#testimonials {
+  padding:100px 80px;
+  background:var(--cream);
+  position:relative; overflow:hidden;
+}
+#testimonials .tm-wm {
+  position:absolute; bottom:-60px; left:-20px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:300px; font-weight:300;
+  color:rgba(59,31,13,.028); line-height:1;
+  pointer-events:none; user-select:none;
+}
+.tm-header { text-align:center; margin-bottom:60px; }
+
+/* Featured review — full width */
+.tm-featured {
+  background:var(--mocha-dark);
+  border-radius:28px; padding:56px 60px;
+  margin-bottom:28px;
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:56px; align-items:center;
+  position:relative; overflow:hidden;
+}
+.tm-featured::before {
+  content:'"'; position:absolute;
+  top:-20px; left:40px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:240px; font-weight:300;
+  color:rgba(245,239,230,.05); line-height:1;
+  pointer-events:none;
+}
+.tm-feat-text {
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic; font-size:22px; font-weight:300;
+  color:rgba(245,239,230,.92); line-height:1.65;
+  position:relative; z-index:1;
+}
+.tm-feat-author { position:relative; z-index:1; }
+.tm-stars { display:flex; gap:4px; margin-bottom:20px; }
+.tm-star { color:var(--sand); font-size:15px; }
+/* 📷 Client photo */
+.tm-client-photo {
+  width:72px; height:72px; border-radius:50%;
+  overflow:hidden; margin-bottom:14px;
+  border:3px solid rgba(245,239,230,.18);
+  background:var(--mocha-mid);
+}
+.tm-client-photo img { width:100%; height:100%; object-fit:cover; }
+.tm-client-photo .tm-ph {
+  width:100%; height:100%;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px; font-weight:300; color:var(--cream);
+}
+.tm-name {
+  font-family:'DM Sans',sans-serif; font-size:15px;
+  font-weight:500; color:var(--cream); margin-bottom:3px;
+}
+.tm-sub {
+  font-family:'DM Sans',sans-serif; font-size:11px;
+  font-weight:300; color:var(--sand);
+}
+
+/* Grid of smaller cards */
+.tm-grid {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:18px;
+}
+.tm-card {
+  background:var(--white-warm);
+  border-radius:20px; padding:28px 24px;
+  transition:transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s;
+  cursor:default;
+}
+.tm-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-md); }
+.tm-card-photo {
+  width:48px; height:48px; border-radius:50%;
+  overflow:hidden; margin-bottom:14px;
+  background:var(--cream-warm);
+}
+.tm-card-photo img { width:100%; height:100%; object-fit:cover; }
+.tm-card-photo .tm-ph {
+  width:100%; height:100%;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px; font-weight:300; color:var(--mocha-mid);
+}
+.tm-card-stars { display:flex; gap:3px; margin-bottom:10px; }
+.tm-card-star { color:var(--mocha-light); font-size:12px; }
+.tm-card-text {
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic; font-size:15px; font-weight:300;
+  color:var(--mocha-mid); line-height:1.7; margin-bottom:16px;
+}
+.tm-card-name {
+  font-family:'DM Sans',sans-serif; font-size:12px;
+  font-weight:500; color:var(--mocha-dark);
+}
+.tm-card-loc {
+  font-family:'DM Sans',sans-serif; font-size:10px;
+  font-weight:300; color:var(--sand); letter-spacing:.06em;
+}
+
+@media (max-width:1100px) {
+  .tm-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:900px) {
+  #testimonials { padding:72px 32px; }
+  .tm-featured { grid-template-columns:1fr; gap:28px; padding:36px 28px; }
+}
+@media (max-width:600px) {
+  #testimonials { padding:60px 24px; }
+  .tm-grid { grid-template-columns:1fr; }
+  .tm-feat-text { font-size:18px; }
+}
+
+/* ===========================
+   PROCESS — HOW IT WORKS
+=========================== */
+#process {
+  padding:100px 80px;
+  background:var(--white-warm);
+}
+.process-header { margin-bottom:60px; }
+.process-steps {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:2px;
+  position:relative;
+}
+/* Connecting line */
+.process-steps::before {
+  content:''; position:absolute;
+  top:36px; left:10%; right:10%; height:1px;
+  background:linear-gradient(to right, transparent, var(--cream-deep), var(--cream-deep), transparent);
+  z-index:0;
+}
+.process-step {
+  display:flex; flex-direction:column; align-items:center;
+  text-align:center; padding:0 20px 0;
+  position:relative; z-index:1;
+}
+.step-num {
+  width:72px; height:72px; border-radius:50%;
+  background:var(--cream); border:1.5px solid var(--cream-deep);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px; font-weight:300; color:var(--mocha-dark);
+  margin-bottom:24px;
+  transition:background .3s, border-color .3s, box-shadow .3s;
+}
+.process-step:hover .step-num {
+  background:var(--mocha-dark); color:var(--cream);
+  border-color:var(--mocha-dark);
+  box-shadow:0 12px 32px rgba(59,31,13,.22);
+}
+.step-title {
+  font-family:'DM Sans',sans-serif;
+  font-size:15px; font-weight:500;
+  color:var(--mocha-dark); margin-bottom:8px;
+}
+.step-desc {
+  font-family:'DM Sans',sans-serif;
+  font-size:13px; font-weight:300;
+  color:var(--sand); line-height:1.7;
+}
+
+@media (max-width:900px) {
+  #process { padding:72px 32px; }
+  .process-steps { grid-template-columns:1fr 1fr; gap:40px; }
+  .process-steps::before { display:none; }
+}
+@media (max-width:600px) {
+  #process { padding:60px 24px; }
+  .process-steps { grid-template-columns:1fr; }
+}
+
+/* ===========================
+   TRUST STRIP
+=========================== */
+.trust-strip {
+  background:var(--mocha-dark); padding:56px 80px;
+  display:flex; align-items:center;
+  justify-content:space-around; flex-wrap:wrap; gap:20px;
+}
+.trust-item { display:flex; flex-direction:column; align-items:center; text-align:center; gap:5px; }
+.trust-num {
+  font-family:'Cormorant Garamond',serif;
+  font-size:46px; font-weight:300; color:var(--cream); line-height:1;
+}
+.trust-lbl {
+  font-family:'DM Sans',sans-serif; font-size:10px;
+  font-weight:400; letter-spacing:.2em; text-transform:uppercase; color:var(--sand);
+}
+.trust-div { width:1px; height:60px; background:rgba(245,239,230,.14); }
+@media (max-width:900px) {
+  .trust-strip { padding:44px 32px; }
+  .trust-div { display:none; }
+}
+@media (max-width:600px) {
+  .trust-strip { padding:44px 24px; display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+}
+
+/* ===========================
+   LOCATION & CONTACT
+=========================== */
+#location {
+  padding:100px 80px;
+  background:var(--cream);
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:80px; align-items:center;
+}
+.map-box {
+  background:var(--white-warm);
+  border-radius:24px; height:400px;
+  overflow:hidden; position:relative;
+}
+.map-grid {
+  position:absolute; inset:0;
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(59,31,13,.05) 39px,rgba(59,31,13,.05) 40px),
+    repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(59,31,13,.05) 39px,rgba(59,31,13,.05) 40px);
+}
+.map-pin-wrap {
+  position:absolute; top:50%; left:50%;
+  transform:translate(-50%,-58%);
+  display:flex; flex-direction:column; align-items:center;
+}
+.map-pin {
+  width:30px; height:30px;
+  background:var(--mocha-dark);
+  border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+  box-shadow:0 6px 20px rgba(59,31,13,.3);
+  animation:pinB 2.2s ease-in-out infinite;
+  position:relative;
+}
+.map-pin::after {
+  content:''; position:absolute;
+  top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  width:9px; height:9px;
+  background:var(--white-warm); border-radius:50%;
+}
+@keyframes pinB {
+  0%,100%{transform:rotate(-45deg) translateY(0);}
+  50%{transform:rotate(-45deg) translateY(-10px);}
+}
+.map-addr-card {
+  position:absolute; bottom:18px; left:18px; right:18px;
+  background:var(--mocha-dark);
+  border-radius:18px; padding:18px 22px;
+}
+.mac-name {
+  font-family:'DM Sans',sans-serif;
+  font-size:13px; font-weight:500; color:var(--cream); margin-bottom:4px;
+}
+.mac-addr {
+  font-family:'DM Sans',sans-serif;
+  font-size:12px; font-weight:300; color:rgba(245,239,230,.65); line-height:1.55;
+}
+.loc-right {}
+.hours-block { margin-bottom:30px; }
+.hours-row {
+  display:flex; align-items:center;
+  justify-content:space-between; padding:13px 0;
+  border-bottom:1px solid var(--cream-deep);
+}
+.hr-day { font-family:'DM Sans',sans-serif; font-size:14px; font-weight:400; color:var(--mocha-dark); }
+.hr-time { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:15px; color:var(--mocha-mid); }
+.open-pill {
+  background:#E2F5EE; color:#0A6649;
+  font-family:'DM Sans',sans-serif; font-size:9.5px;
+  font-weight:500; letter-spacing:.08em;
+  padding:4px 10px; border-radius:100px;
+}
+.contact-cards {
+  display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:24px;
+}
+.cc {
+  background:var(--white-warm);
+  border-radius:16px; padding:18px 20px;
+  text-decoration:none; display:block;
+  transition:transform .25s, box-shadow .25s; cursor:none;
+}
+.cc:hover { transform:translateY(-3px); box-shadow:var(--shadow-md); }
+.cc-lbl {
+  font-family:'DM Sans',sans-serif; font-size:9px;
+  font-weight:500; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--sand); margin-bottom:5px;
+}
+.cc-val {
+  font-family:'DM Sans',sans-serif; font-size:14px;
+  font-weight:400; color:var(--mocha-dark);
+}
+
+@media (max-width:900px) {
+  #location { grid-template-columns:1fr; padding:72px 32px; gap:48px; }
+  .contact-cards { grid-template-columns:1fr; }
+}
+@media (max-width:600px) {
+  #location { padding:60px 24px; }
+  .map-box { height:300px; }
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  background:var(--mocha-dark);
+  padding:72px 80px 40px;
+}
+.ft-top {
+  display:grid; grid-template-columns:2fr 1fr 1fr 1.4fr;
+  gap:56px; margin-bottom:56px;
+}
+.ft-brand-name {
+  font-family:'Cormorant Garamond',serif;
+  font-size:38px; font-weight:400;
+  color:var(--cream); letter-spacing:.08em; line-height:1;
+}
+.ft-brand-sub {
+  font-family:'DM Sans',sans-serif; font-size:9px;
+  font-weight:400; letter-spacing:.3em; text-transform:uppercase;
+  color:var(--sand); margin-bottom:16px; margin-top:3px;
+}
+.ft-tagline {
+  font-family:'DM Sans',sans-serif; font-size:13px;
+  font-weight:300; color:rgba(245,239,230,.55);
+  line-height:1.7; max-width:275px;
+}
+.ft-col-h {
+  font-family:'DM Sans',sans-serif; font-size:10.5px;
+  font-weight:500; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--sand); margin-bottom:18px;
+}
+.ft-links { list-style:none; }
+.ft-links li { margin-bottom:9px; }
+.ft-links a {
+  font-family:'DM Sans',sans-serif; font-size:13px;
+  font-weight:300; color:rgba(245,239,230,.55); text-decoration:none;
+  transition:color .2s;
+}
+.ft-links a:hover { color:var(--cream); }
+.ft-addr {
+  font-family:'DM Sans',sans-serif; font-size:13px;
+  font-weight:300; color:rgba(245,239,230,.55); line-height:1.7;
+  margin-bottom:14px;
+}
+.ft-phones a {
+  display:block; font-family:'DM Sans',sans-serif; font-size:13px;
+  font-weight:400; color:rgba(245,239,230,.65); text-decoration:none;
+  margin-bottom:4px; transition:color .2s;
+}
+.ft-phones a:hover { color:var(--cream); }
+.ft-bottom {
+  border-top:1px solid rgba(245,239,230,.1); padding-top:26px;
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;
+}
+.ft-copy {
+  font-family:'DM Sans',sans-serif; font-size:11px;
+  font-weight:300; color:rgba(245,239,230,.38);
+}
+.ft-socials { display:flex; gap:22px; }
+.ft-socials a {
+  font-family:'DM Sans',sans-serif; font-size:11px;
+  font-weight:400; letter-spacing:.16em; text-transform:uppercase;
+  color:rgba(245,239,230,.45); text-decoration:none; transition:color .2s;
+}
+.ft-socials a:hover { color:var(--cream); }
+
+@media (max-width:900px) {
+  footer { padding:56px 32px 32px; }
+  .ft-top { grid-template-columns:1fr 1fr; gap:36px; }
+}
+@media (max-width:600px) {
+  footer { padding:48px 24px 28px; }
+  .ft-top { grid-template-columns:1fr; gap:28px; }
+}
+
+/* ===========================
+   FLOATING CTA BUTTON
+=========================== */
+.float-cta {
+  position:fixed; bottom:28px; right:28px; z-index:900;
+  background:var(--mocha-dark); color:var(--white-warm);
+  font-family:'DM Sans',sans-serif; font-size:10.5px;
+  font-weight:500; letter-spacing:.14em; text-transform:uppercase;
+  padding:12px 22px; border-radius:100px; border:none; cursor:none;
+  text-decoration:none; display:flex; align-items:center; gap:9px;
+  box-shadow:0 8px 32px rgba(59,31,13,.32);
+  opacity:0; transform:translateY(14px);
+  transition:opacity .4s, transform .4s, box-shadow .25s;
+  pointer-events:none;
+}
+.float-cta.vis { opacity:1; transform:translateY(0); pointer-events:auto; }
+.float-cta:hover { transform:translateY(-3px); box-shadow:0 18px 48px rgba(59,31,13,.38); }
+.float-pulse {
+  width:7px; height:7px; border-radius:50%;
+  background:var(--sand);
+  animation:pop 2.2s ease-in-out infinite;
+}
+@keyframes pop { 0%,100%{opacity:1;} 50%{opacity:.3;} }
+@media (max-width:600px) {
+  .float-cta { bottom:18px; right:18px; }
+}
+</style>
+</head>
+<body>
+
+<div id="c-dot"></div>
+<div id="c-ring"></div>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose" aria-label="Close menu">×</button>
+  <a href="#about"        onclick="closeMob()">About</a>
+  <a href="#services"     onclick="closeMob()">Services</a>
+  <a href="#collabs"      onclick="closeMob()">Collabs</a>
+  <a href="#eyewear"      onclick="closeMob()">Eyewear</a>
+  <a href="#testimonials" onclick="closeMob()">Reviews</a>
+  <a href="#location"     onclick="closeMob()">Find Us</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="logo" aria-label="Vivencia home">
+    <span class="logo-top">VIVENCIA</span>
+    <span class="logo-sub">Vision Care Clinic</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#collabs">Collabs</a></li>
+    <li><a href="#eyewear">Eyewear</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#location">Find Us</a></li>
+  </ul>
+  <div class="nav-cta-wrap">
+    <a href="tel:09532350317" class="btn btn-dark" aria-label="Book appointment">Book Appointment</a>
+  </div>
+  <button class="hamburger" id="hamBtn" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main>
+<!-- ══════════════════════════
+     HERO
+══════════════════════════ -->
+<section id="hero">
+
+  <!-- LEFT — text panel -->
+  <div class="hero-left">
+    <p class="h-eyebrow">Calbayog City · Est. 2023</p>
+
+    <h1 class="hero-title">
+      <span class="hero-line"><span class="hero-line-inner">Enhance</span></span>
+      <span class="hero-line"><span class="hero-line-inner">Your <em class="hero-em">Vision</em></span></span>
+      <span class="hero-line"><span class="hero-line-inner">in Style.</span></span>
+    </h1>
+
+    <p class="hero-desc">Doctor-led eye care and curated eyewear — where clinical precision meets personal expression.</p>
+
+    <div class="hero-actions">
+      <a href="tel:09532350317" class="btn btn-dark" aria-label="Book appointment">Book an Appointment →</a>
+      <a href="#eyewear" class="arrow-link" aria-label="View frames">View Frames →</a>
+    </div>
+
+    <!-- Floating status badge -->
+    <div class="hero-float-badge" aria-hidden="true">
+      <div class="hfb-dot"></div>
+      <div>
+        <div class="hfb-text">Open Today</div>
+        <div class="hfb-sub">8:00 AM – 6:00 PM</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT — photo panel -->
+  <div class="hero-right" aria-hidden="true">
+
+    <!--
+    ╔═══════════════════════════════════════════════╗
+    ║  📷  HERO PHOTO                               ║
+    ║  Put your model/eyewear photo here:           ║
+    ║  images/hero-model.jpg                        ║
+    ╚═══════════════════════════════════════════════╝
+    -->
+    <div class="hero-right-img">
+      <img src="images/hero-model.jpg" alt="Vivencia Vision Care — eyewear model">
+    </div>
+
+    <div class="hero-right-overlay"></div>
+    <div class="hero-wm">See.</div>
+
+    <div class="hero-badge" aria-label="Open daily 8AM to 6PM">
+      <div class="hero-badge-text">Open · Daily<br>8AM – 6PM</div>
+    </div>
+
+    <p class="hero-credit">Dr. Cleo Dawn Camarines, O.D.</p>
+  </div>
+
+  <!-- Scroll cue -->
+  <div class="scroll-ind" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span class="scroll-lbl">Scroll</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Visual Acuity Testing</span><span class="dia">◆</span>
+    <span>Comprehensive Eye Exams</span><span class="dia">◆</span>
+    <span>Eyeglasses &amp; Contact Lens Dispensing</span><span class="dia">◆</span>
+    <span>Fundus Photography</span><span class="dia">◆</span>
+    <span>Cataract Screening</span><span class="dia">◆</span>
+    <span>Dry Eye Management</span><span class="dia">◆</span>
+    <span>Cycloplegic Refraction</span><span class="dia">◆</span>
+    <span>Color Vision Testing</span><span class="dia">◆</span>
+    <span>Pediatric Eye Care</span><span class="dia">◆</span>
+    <span>Open 7 Days a Week</span><span class="dia">◆</span>
+    <!-- duplicate for seamless loop -->
+    <span>Visual Acuity Testing</span><span class="dia">◆</span>
+    <span>Comprehensive Eye Exams</span><span class="dia">◆</span>
+    <span>Eyeglasses &amp; Contact Lens Dispensing</span><span class="dia">◆</span>
+    <span>Fundus Photography</span><span class="dia">◆</span>
+    <span>Cataract Screening</span><span class="dia">◆</span>
+    <span>Dry Eye Management</span><span class="dia">◆</span>
+    <span>Cycloplegic Refraction</span><span class="dia">◆</span>
+    <span>Color Vision Testing</span><span class="dia">◆</span>
+    <span>Pediatric Eye Care</span><span class="dia">◆</span>
+    <span>Open 7 Days a Week</span><span class="dia">◆</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+     ABOUT
+══════════════════════════ -->
+<section id="about">
+
+  <!-- Image stack — left -->
+  <div class="about-img-stack reveal-left">
+
+    <!--
+    📷 MAIN IMAGE — Doctor photo
+    Replace: images/doctor.jpg
+    -->
+    <div class="about-img-main">
+      <div class="img-placeholder-box" style="width:100%;height:100%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);">
+        images/doctor.jpg
+      </div>
+      <img src="images/doctor.jpg" alt="Dr. Cleo Dawn Camarines, O.D." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+    </div>
+
+    <!--
+    📷 ACCENT IMAGE — Clinic interior
+    Replace: images/clinic-interior.jpg
+    -->
+    <div class="about-img-accent">
+      <div class="img-placeholder-box" style="width:100%;height:100%;background:var(--cream-deep);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--sand);">
+        images/clinic-interior.jpg
+      </div>
+      <img src="images/clinic-interior.jpg" alt="Vivencia Clinic interior" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+    </div>
+
+    <!-- Floating stat card -->
+    <div class="about-float-card reveal reveal-d2">
+      <div class="afc-num">8K+</div>
+      <div class="afc-lbl">Instagram Community</div>
+    </div>
+  </div>
+
+  <!-- Text — right -->
+  <div class="reveal-right">
+    <p class="eyebrow">About the Clinic</p>
+    <h2 class="display">Where <em>Expert Care</em><br>Meets Style</h2>
+    <div class="body-text about-body">
+      <p>Dr. Cleo Dawn Camarines, O.D. trained at the prestigious Chong Hua Eye Institute, bringing specialist-level precision to every consultation. After years of rigorous clinical training, she returned to Calbayog City with one mission: to make world-class eye care genuinely accessible — without cutting corners.</p>
+      <p>At Vivencia, every visit is personal. Every prescription is explained in full. And every frame is chosen together. You leave not just seeing clearly, but feeling like the very best version of yourself.</p>
+    </div>
+    <div class="about-stats-row">
+      <div class="stat-cell reveal d1">
+        <div class="stat-num">9</div>
+        <div class="stat-lbl">Clinical Services</div>
+      </div>
+      <div class="stat-cell reveal d2">
+        <div class="stat-num">8K+</div>
+        <div class="stat-lbl">Instagram Followers</div>
+      </div>
+      <div class="stat-cell reveal d3">
+        <div class="stat-num">7</div>
+        <div class="stat-lbl">Days Open Weekly</div>
+      </div>
+      <div class="stat-cell reveal d4">
+        <div class="stat-num">FDA</div>
+        <div class="stat-lbl">Registered Clinic</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     WHY CHOOSE US — 3D Tilt Cards
+══════════════════════════ -->
+<section id="why">
+  <div class="wm" aria-hidden="true">WHY</div>
+  <div class="why-header">
+    <p class="eyebrow center">Why Vivencia</p>
+    <h2 class="display" style="text-align:center;">The Difference You'll <em>Feel</em></h2>
+  </div>
+  <div class="why-grid">
+
+    <div class="tilt-card reveal d1">
+      <div class="tilt-inner">
+        <div class="why-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><circle cx="11" cy="11" r="7" stroke="#A0683A" stroke-width="1.5"/><circle cx="11" cy="11" r="3" stroke="#A0683A" stroke-width="1.5"/><line x1="1" y1="11" x2="4.5" y2="11" stroke="#A0683A" stroke-width="1.5" stroke-linecap="round"/><line x1="17.5" y1="11" x2="21" y2="11" stroke="#A0683A" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="why-title">Specialist-Level Care</h3>
+        <p class="why-desc">Trained at Chong Hua Eye Institute, Dr. Cleo brings big-city clinical expertise to the heart of Calbayog — every single visit.</p>
+      </div>
+    </div>
+
+    <div class="tilt-card dark-card reveal d2">
+      <div class="tilt-inner">
+        <div class="why-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><path d="M11 3l2.2 5.5H19l-4.4 3.4 1.6 5.6L11 14.3l-5.2 3.2 1.6-5.6L3 8.5h5.8L11 3z" stroke="rgba(245,239,230,0.85)" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="why-title">Complete Package. One Price.</h3>
+        <p class="why-desc">Every frame includes a full eye exam, graded prescription lens, case, and wiper. No hidden fees, no surprise charges. Just clarity.</p>
+      </div>
+    </div>
+
+    <div class="tilt-card reveal d3">
+      <div class="tilt-inner">
+        <div class="why-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><rect x="3" y="8" width="7" height="6" rx="1.5" stroke="#A0683A" stroke-width="1.5"/><rect x="12" y="8" width="7" height="6" rx="1.5" stroke="#A0683A" stroke-width="1.5"/><line x1="10" y1="11" x2="12" y2="11" stroke="#A0683A" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="why-title">Curated Eyewear Boutique</h3>
+        <p class="why-desc">Hand-selected frames across styles and budgets — from transparent minimalist to bold cat-eye — with personal styling guidance included.</p>
+      </div>
+    </div>
+
+    <div class="tilt-card reveal d4">
+      <div class="tilt-inner">
+        <div class="why-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><path d="M4 11C4 7.134 7.134 4 11 4C14.866 4 18 7.134 18 11V13" stroke="#A0683A" stroke-width="1.5" stroke-linecap="round"/><path d="M11 14v4M9 20h4" stroke="#A0683A" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="why-title">Child-Friendly Environment</h3>
+        <p class="why-desc">Pediatric eye exams done with patience and warmth. Dr. Cleo makes first eye exam experiences comfortable for kids of every age.</p>
+      </div>
+    </div>
+
+    <div class="tilt-card reveal d5">
+      <div class="tilt-inner">
+        <div class="why-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><circle cx="11" cy="11" r="8" stroke="#A0683A" stroke-width="1.5"/><path d="M8 11l2 2 4-4" stroke="#A0683A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="why-title">Open Every Day</h3>
+        <p class="why-desc">Monday through Sunday, 8 AM to 6 PM — including public holidays. Because your eye health doesn't take days off, and neither do we.</p>
+      </div>
+    </div>
+
+    <div class="tilt-card reveal d6">
+      <div class="tilt-inner">
+        <div class="why-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><path d="M3 8c0-2.761 3.582-5 8-5s8 2.239 8 5v2c0 2.761-3.582 5-8 5a14 14 0 01-3-.33V17l-3 2v-4.5C3.9 13.5 3 11.8 3 10V8z" stroke="#A0683A" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="why-title">Personal Consultation Style</h3>
+        <p class="why-desc">Not a production-line clinic. Every appointment gets dedicated time, real conversation, and advice tailored to your lifestyle and needs.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     SERVICES
+══════════════════════════ -->
+<section id="services">
+  <div class="services-header reveal">
+    <p class="eyebrow">What We Offer</p>
+    <h2 class="display">Clinical Excellence,<br><em>Complete Care</em></h2>
+  </div>
+  <div class="services-grid">
+
+    <div class="svc-card reveal d1">
+      <div class="svc-body">
+        <div class="svc-icon"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="6" stroke="#A0683A" stroke-width="1.5"/><circle cx="10" cy="10" r="2.5" stroke="#A0683A" stroke-width="1.5"/></svg></div>
+        <h3 class="svc-name">Visual Acuity Testing</h3>
+        <p class="svc-desc">Precise measurement of near and far vision using calibrated charts and optometric tools — the foundation of your prescription.</p>
+      </div>
+    </div>
+
+    <div class="svc-card featured-svc reveal d2">
+      <div class="svc-body">
+        <div class="svc-icon"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M2 10C2 10 5.5 3.5 10 3.5S18 10 18 10s-3.5 6.5-8 6.5S2 10 2 10z" stroke="rgba(245,239,230,0.9)" stroke-width="1.5" stroke-linejoin="round"/><circle cx="10" cy="10" r="3" stroke="rgba(245,239,230,0.9)" stroke-width="1.5"/></svg></div>
+        <h3 class="svc-name">Comprehensive Eye Exam ★</h3>
+        <p class="svc-desc">Our signature full-spectrum examination: retinal health, refraction, pressure testing, and complete ocular analysis in one visit.</p>
+      </div>
+    </div>
+
+    <div class="svc-card reveal d3">
+      <div class="svc-body">
+        <div class="svc-icon"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="8.5" r="4" stroke="#A0683A" stroke-width="1.5"/><path d="M4 18c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="#A0683A" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h3 class="svc-name">Pediatric Eye Care</h3>
+        <p class="svc-desc">Gentle, thorough examinations for children — detecting vision problems early for healthy development and academic confidence.</p>
+      </div>
+    </div>
+
+    <div class="svc-card reveal d4">
+      <div class="svc-body">
+        <div class="svc-icon"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M10 2s-7 4-7 10c0 3.866 3.134 7 7 7s7-3.134 7-7C17 6 10 2 10 2z" stroke="#A0683A" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 10c0-1.657 1.343-3 3-3" stroke="#A0683A" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h3 class="svc-name">Dry Eye Assessment</h3>
+        <p class="svc-desc">Advanced tear film analysis with personalized management plans — including environmental and lifestyle recommendations.</p>
+      </div>
+    </div>
+
+    <div class="svc-card reveal d5">
+      <div class="svc-body">
+        <div class="svc-icon"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><rect x="2" y="4" width="16" height="12" rx="2" stroke="#A0683A" stroke-width="1.5"/><circle cx="10" cy="10" r="2.5" stroke="#A0683A" stroke-width="1.5"/><circle cx="15.5" cy="5.5" r="1.2" stroke="#A0683A" stroke-width="1.2"/></svg></div>
+        <h3 class="svc-name">Fundus Photography</h3>
+        <p class="svc-desc">High-resolution retinal imaging to monitor ocular health over time and enable early detection of serious eye conditions.</p>
+      </div>
+    </div>
+
+    <div class="svc-card reveal d6">
+      <div class="svc-body">
+        <div class="svc-icon"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="6" cy="10" r="2.5" stroke="#A0683A" stroke-width="1.5"/><circle cx="14" cy="6.5" r="2" stroke="#A0683A" stroke-width="1.5"/><circle cx="14" cy="13.5" r="2" stroke="#A0683A" stroke-width="1.5"/><line x1="8.5" y1="10" x2="12" y2="7.5" stroke="#A0683A" stroke-width="1.2" stroke-linecap="round"/><line x1="8.5" y1="10" x2="12" y2="12.5" stroke="#A0683A" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+        <h3 class="svc-name">Cataract Screening</h3>
+        <p class="svc-desc">Slit-lamp biomicroscopy for early detection of cataracts and lens opacities — giving you a head start on your eye health journey.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     HOW IT WORKS
+══════════════════════════ -->
+<section id="process">
+  <div class="process-header reveal">
+    <p class="eyebrow">The Experience</p>
+    <h2 class="display">Your Visit, <em>Step by Step</em></h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step reveal d1">
+      <div class="step-num">01</div>
+      <h3 class="step-title">Book an Appointment</h3>
+      <p class="step-desc">Call or message us on Facebook or Instagram. Walk-ins welcome too — we're open every day.</p>
+    </div>
+    <div class="process-step reveal d2">
+      <div class="step-num">02</div>
+      <h3 class="step-title">Comprehensive Eye Exam</h3>
+      <p class="step-desc">Dr. Cleo conducts a thorough, unhurried examination covering refraction, eye health, and pressure testing.</p>
+    </div>
+    <div class="process-step reveal d3">
+      <div class="step-num">03</div>
+      <h3 class="step-title">Frame Styling Session</h3>
+      <p class="step-desc">Browse our curated collection. Dr. Cleo personally guides you to frames that suit your face, style, and life.</p>
+    </div>
+    <div class="process-step reveal d4">
+      <div class="step-num">04</div>
+      <h3 class="step-title">See Clearly in Style</h3>
+      <p class="step-desc">Your complete package — graded lenses, case, and wiper — ready for you. Leave looking and seeing your very best.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     MODEL COLLABORATIONS
+══════════════════════════ -->
+<section id="collabs">
+  <div class="collabs-header">
+    <p class="eyebrow" style="color:var(--sand);">
+      <span style="display:block;width:36px;height:1px;background:var(--sand);margin-right:14px;"></span>
+      Model Collaborations
+    </p>
+    <h2 class="display light">Frames on <em>Real People</em></h2>
+    <p class="body-text" style="color:rgba(245,239,230,.55);max-width:520px;margin-top:4px;">See how our eyewear translates from the display to real life. These are our model collaborations — genuine Vivencia clients and partners, wearing our curated frames.</p>
+  </div>
+
+  <div class="collabs-grid">
+
+    <!--
+    ╔══════════════════════════════════════════════╗
+    ║  VIDEO 1 — Main / Featured collab            ║
+    ║  Replace: videos/collab-1.mp4                ║
+    ║  Poster:  images/collab-poster-1.jpg         ║
+    ╚══════════════════════════════════════════════╝
+    -->
+    <div class="video-card reveal d1">
+      <div class="video-card-inner">
+        <video
+          src="videos/collab-1.mp4"
+          poster="images/collab-poster-1.jpg"
+          loop muted playsinline
+          data-video="true"
+        ></video>
+        <!-- Shown if no poster image is found -->
+        <div class="video-poster">
+          <img src="images/collab-poster-1.jpg" alt="Model collaboration 1">
+        </div>
+        <div class="play-btn">
+          <div class="play-circle">
+            <svg width="18" height="18" fill="none" viewBox="0 0 18 18"><path d="M6 4l9 5-9 5V4z" fill="rgba(253,250,246,0.9)"/></svg>
+          </div>
+        </div>
+        <div class="video-caption">
+          <div class="vc-model">JULY Frame — Espresso</div>
+          <div class="vc-tag">@vivenciavisioncare · Collaboration</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:20px;">
+
+      <!--
+      ╔══════════════════════════════════════════════╗
+      ║  VIDEO 2                                     ║
+      ║  Replace: videos/collab-2.mp4                ║
+      ║  Poster:  images/collab-poster-2.jpg         ║
+      ╚══════════════════════════════════════════════╝
+      -->
+      <div class="video-card reveal d2" style="flex:1;">
+        <div class="video-card-inner">
+          <video
+            src="videos/collab-2.mp4"
+            poster="images/collab-poster-2.jpg"
+            loop muted playsinline
+            data-video="true"
+          ></video>
+          <div class="video-poster">
+            <img src="images/collab-poster-2.jpg" alt="Model collaboration 2">
+          </div>
+          <div class="play-btn">
+            <div class="play-circle">
+              <svg width="16" height="16" fill="none" viewBox="0 0 18 18"><path d="M6 4l9 5-9 5V4z" fill="rgba(253,250,246,0.9)"/></svg>
+            </div>
+          </div>
+          <div class="video-caption">
+            <div class="vc-model">LUNA Frame — Latte</div>
+            <div class="vc-tag">@vivenciavisioncare · Collaboration</div>
+          </div>
+        </div>
+      </div>
+
+      <!--
+      ╔══════════════════════════════════════════════╗
+      ║  VIDEO 3                                     ║
+      ║  Replace: videos/collab-3.mp4                ║
+      ║  Poster:  images/collab-poster-3.jpg         ║
+      ╚══════════════════════════════════════════════╝
+      -->
+      <div class="video-card reveal d3" style="flex:1;">
+        <div class="video-card-inner">
+          <video
+            src="videos/collab-3.mp4"
+            poster="images/collab-poster-3.jpg"
+            loop muted playsinline
+            data-video="true"
+          ></video>
+          <div class="video-poster">
+            <img src="images/collab-poster-3.jpg" alt="Model collaboration 3">
+          </div>
+          <div class="play-btn">
+            <div class="play-circle">
+              <svg width="16" height="16" fill="none" viewBox="0 0 18 18"><path d="M6 4l9 5-9 5V4z" fill="rgba(253,250,246,0.9)"/></svg>
+            </div>
+          </div>
+          <div class="video-caption">
+            <div class="vc-model">NOVA Frame — Navy</div>
+            <div class="vc-tag">@vivenciavisioncare · Collaboration</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end right col -->
+  </div><!-- end collabs-grid -->
+
+  <div style="text-align:center;margin-top:44px;">
+    <a href="https://www.instagram.com/vivenciavisioncare" target="_blank" rel="noopener" class="btn btn-cream" aria-label="See more on Instagram">See More on Instagram →</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     EYEWEAR COLLECTION
+══════════════════════════ -->
+<section id="eyewear">
+  <div class="eyewear-intro">
+    <div class="reveal-left">
+      <p class="eyebrow">Curated Collection</p>
+      <h2 class="display">Frames That<br><em>Frame You</em></h2>
+    </div>
+    <div class="reveal-right">
+      <div class="pkg-pills">
+        <span class="pkg-pill">Free Eye Exam Included</span>
+        <span class="pkg-pill">Graded Lens</span>
+        <span class="pkg-pill">Case + Wiper</span>
+      </div>
+      <p class="body-text">Every frame at Vivencia comes as a complete package — eye exam, prescription lens, case, and wiper included. No hidden charges, ever.</p>
+    </div>
+  </div>
+
+  <div class="filter-bar" role="group" aria-label="Filter frames">
+    <button class="fb active" data-filter="all">All Frames</button>
+    <button class="fb" data-filter="transparent">Transparent</button>
+    <button class="fb" data-filter="full-rim">Full Rim</button>
+    <button class="fb" data-filter="semi-rimless">Semi-rimless</button>
+    <button class="fb" data-filter="cat-eye">Cat Eye</button>
+  </div>
+
+  <div class="frames-grid" id="framesGrid">
+
+    <!--
+    ╔═══════════════════════╗
+    ║  JULY frame           ║
+    ║  images/frame-july.jpg║
+    ╚═══════════════════════╝
+    -->
+    <div class="frame-card reveal d1" data-category="transparent">
+      <div class="frame-img-zone">
+        <span class="frame-badge-abs badge-bundle">Bundle</span>
+        <div class="frame-img-ph">images/frame-july.jpg</div>
+        <img src="images/frame-july.jpg" alt="JULY transparent rectangular frame" id="img-july">
+      </div>
+      <div class="frame-body">
+        <div class="frame-coll-lbl">Vivencia Collection</div>
+        <div class="frame-name">JULY</div>
+        <div class="frame-type">Transparent rectangular</div>
+        <div class="swatches">
+          <button class="sw active" style="background:#3B1E08" title="Espresso" data-img="img-july"></button>
+          <button class="sw"        style="background:#D4D4D4" title="Crystal"  data-img="img-july"></button>
+          <button class="sw"        style="background:#4A5A3A" title="Moss"     data-img="img-july"></button>
+          <button class="sw"        style="background:#9FA5A8" title="Ash"      data-img="img-july"></button>
+        </div>
+        <div class="frame-footer">
+          <span class="frame-incl">Includes exam + lens</span>
+          <a href="https://www.facebook.com/vivenciavisioncare" target="_blank" rel="noopener" class="arrow-link" style="font-size:11px;font-weight:500;" aria-label="Inquire JULY">Inquire →</a>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    ╔═══════════════════════╗
+    ║  NOVA frame           ║
+    ║  images/frame-nova.jpg║
+    ╚═══════════════════════╝
+    -->
+    <div class="frame-card reveal d2" data-category="full-rim">
+      <div class="frame-img-zone">
+        <span class="frame-badge-abs badge-new">New In</span>
+        <div class="frame-img-ph">images/frame-nova.jpg</div>
+        <img src="images/frame-nova.jpg" alt="NOVA full-rim oval frame" id="img-nova">
+      </div>
+      <div class="frame-body">
+        <div class="frame-coll-lbl">Vivencia Collection</div>
+        <div class="frame-name">NOVA</div>
+        <div class="frame-type">Classic full-rim oval</div>
+        <div class="swatches">
+          <button class="sw active" style="background:#1A1A1A" title="Matte Black" data-img="img-nova"></button>
+          <button class="sw"        style="background:#8B3A3A" title="Burgundy"    data-img="img-nova"></button>
+          <button class="sw"        style="background:#2C3E50" title="Navy"        data-img="img-nova"></button>
+          <button class="sw"        style="background:#7D6E5E" title="Mocha"       data-img="img-nova"></button>
+        </div>
+        <div class="frame-footer">
+          <span class="frame-incl">Includes exam + lens</span>
+          <a href="https://www.facebook.com/vivenciavisioncare" target="_blank" rel="noopener" class="arrow-link" style="font-size:11px;font-weight:500;" aria-label="Inquire NOVA">Inquire →</a>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    ╔═══════════════════════╗
+    ║  ALBA frame           ║
+    ║  images/frame-alba.jpg║
+    ╚═══════════════════════╝
+    -->
+    <div class="frame-card reveal d3" data-category="semi-rimless">
+      <div class="frame-img-zone">
+        <div class="frame-img-ph">images/frame-alba.jpg</div>
+        <img src="images/frame-alba.jpg" alt="ALBA semi-rimless round frame" id="img-alba">
+      </div>
+      <div class="frame-body">
+        <div class="frame-coll-lbl">Vivencia Collection</div>
+        <div class="frame-name">ALBA</div>
+        <div class="frame-type">Semi-rimless round</div>
+        <div class="swatches">
+          <button class="sw active" style="background:#C0C0C0" title="Silver"    data-img="img-alba"></button>
+          <button class="sw"        style="background:#B5A58A" title="Champagne" data-img="img-alba"></button>
+          <button class="sw"        style="background:#555555" title="Gunmetal"  data-img="img-alba"></button>
+        </div>
+        <div class="frame-footer">
+          <span class="frame-incl">Includes exam + lens</span>
+          <a href="https://www.facebook.com/vivenciavisioncare" target="_blank" rel="noopener" class="arrow-link" style="font-size:11px;font-weight:500;" aria-label="Inquire ALBA">Inquire →</a>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    ╔═══════════════════════╗
+    ║  LUNA frame           ║
+    ║  images/frame-luna.jpg║
+    ╚═══════════════════════╝
+    -->
+    <div class="frame-card reveal d4" data-category="cat-eye">
+      <div class="frame-img-zone">
+        <span class="frame-badge-abs badge-new">New In</span>
+        <div class="frame-img-ph">images/frame-luna.jpg</div>
+        <img src="images/frame-luna.jpg" alt="LUNA transparent cat-eye frame" id="img-luna">
+      </div>
+      <div class="frame-body">
+        <div class="frame-coll-lbl">Vivencia Collection</div>
+        <div class="frame-name">LUNA</div>
+        <div class="frame-type">Transparent cat-eye</div>
+        <div class="swatches">
+          <button class="sw active" style="background:#E8D8C4" title="Latte"    data-img="img-luna"></button>
+          <button class="sw"        style="background:#D8D8D8" title="Clear"    data-img="img-luna"></button>
+          <button class="sw"        style="background:#C4D8E8" title="Ice Blue" data-img="img-luna"></button>
+        </div>
+        <div class="frame-footer">
+          <span class="frame-incl">Includes exam + lens</span>
+          <a href="https://www.facebook.com/vivenciavisioncare" target="_blank" rel="noopener" class="arrow-link" style="font-size:11px;font-weight:500;" aria-label="Inquire LUNA">Inquire →</a>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    ╔══════════════════════╗
+    ║  REI frame           ║
+    ║  images/frame-rei.jpg║
+    ╚══════════════════════╝
+    -->
+    <div class="frame-card reveal d5" data-category="full-rim">
+      <div class="frame-img-zone">
+        <div class="frame-img-ph">images/frame-rei.jpg</div>
+        <img src="images/frame-rei.jpg" alt="REI full-rim square frame" id="img-rei">
+      </div>
+      <div class="frame-body">
+        <div class="frame-coll-lbl">Vivencia Collection</div>
+        <div class="frame-name">REI</div>
+        <div class="frame-type">Full-rim square</div>
+        <div class="swatches">
+          <button class="sw active" style="background:#1A1A1A" title="Black"   data-img="img-rei"></button>
+          <button class="sw"        style="background:#2F4F3A" title="Forest"  data-img="img-rei"></button>
+          <button class="sw"        style="background:#7D5A35" title="Caramel" data-img="img-rei"></button>
+        </div>
+        <div class="frame-footer">
+          <span class="frame-incl">Includes exam + lens</span>
+          <a href="https://www.facebook.com/vivenciavisioncare" target="_blank" rel="noopener" class="arrow-link" style="font-size:11px;font-weight:500;" aria-label="Inquire REI">Inquire →</a>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    ╔════════════════════════╗
+    ║  MIRA frame            ║
+    ║  images/frame-mira.jpg ║
+    ╚════════════════════════╝
+    -->
+    <div class="frame-card reveal d6" data-category="transparent">
+      <div class="frame-img-zone">
+        <span class="frame-badge-abs badge-new">New In</span>
+        <div class="frame-img-ph">images/frame-mira.jpg</div>
+        <img src="images/frame-mira.jpg" alt="MIRA transparent round frame" id="img-mira">
+      </div>
+      <div class="frame-body">
+        <div class="frame-coll-lbl">Vivencia Collection</div>
+        <div class="frame-name">MIRA</div>
+        <div class="frame-type">Transparent round</div>
+        <div class="swatches">
+          <button class="sw active" style="background:#D4D4D4" title="Crystal" data-img="img-mira"></button>
+          <button class="sw"        style="background:#F2C4A8" title="Peach"   data-img="img-mira"></button>
+          <button class="sw"        style="background:#A8C4D4" title="Sky"     data-img="img-mira"></button>
+        </div>
+        <div class="frame-footer">
+          <span class="frame-incl">Includes exam + lens</span>
+          <a href="https://www.facebook.com/vivenciavisioncare" target="_blank" rel="noopener" class="arrow-link" style="font-size:11px;font-weight:500;" aria-label="Inquire MIRA">Inquire →</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end frames-grid -->
+
+  <!-- Package Banner -->
+  <div class="pkg-banner reveal">
+    <p class="pkg-tagline">"Every frame. One complete package."</p>
+    <div class="pkg-items">
+      <div class="pkg-item">
+        <div class="pkg-icon"><svg width="22" height="22" fill="none" viewBox="0 0 22 22"><path d="M2 11C2 11 5.5 4 11 4s9 7 9 7-3.5 7-9 7-9-7-9-7z" stroke="rgba(245,239,230,0.7)" stroke-width="1.5" stroke-linejoin="round"/><circle cx="11" cy="11" r="3" stroke="rgba(245,239,230,0.7)" stroke-width="1.5"/></svg></div>
+        <span class="pkg-lbl">Eye Exam</span>
+      </div>
+      <div class="pkg-item">
+        <div class="pkg-icon"><svg width="22" height="22" fill="none" viewBox="0 0 22 22"><rect x="2" y="8" width="8" height="6" rx="1.5" stroke="rgba(245,239,230,0.7)" stroke-width="1.5"/><rect x="12" y="8" width="8" height="6" rx="1.5" stroke="rgba(245,239,230,0.7)" stroke-width="1.5"/><line x1="10" y1="11" x2="12" y2="11" stroke="rgba(245,239,230,0.7)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <span class="pkg-lbl">Graded Lens</span>
+      </div>
+      <div class="pkg-item">
+        <div class="pkg-icon"><svg width="22" height="22" fill="none" viewBox="0 0 22 22"><rect x="3" y="7" width="16" height="12" rx="2" stroke="rgba(245,239,230,0.7)" stroke-width="1.5"/><path d="M7 7V5a2 2 0 012-2h4a2 2 0 012 2v2" stroke="rgba(245,239,230,0.7)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <span class="pkg-lbl">Glasses Case</span>
+      </div>
+      <div class="pkg-item">
+        <div class="pkg-icon"><svg width="22" height="22" fill="none" viewBox="0 0 22 22"><rect x="6" y="3" width="10" height="16" rx="3" stroke="rgba(245,239,230,0.7)" stroke-width="1.5"/><line x1="9" y1="8" x2="13" y2="8" stroke="rgba(245,239,230,0.7)" stroke-width="1.5" stroke-linecap="round"/><line x1="9" y1="11" x2="13" y2="11" stroke="rgba(245,239,230,0.7)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <span class="pkg-lbl">Lens Wiper</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     PHOTO GALLERY
+══════════════════════════ -->
+<section id="gallery">
+  <div class="gallery-header reveal">
+    <p class="eyebrow">Gallery</p>
+    <h2 class="display">Inside <em>Vivencia</em></h2>
+    <p class="body-text" style="max-width:480px;margin-top:4px;">A glimpse of the clinic, the frames, and the people who wear them.</p>
+  </div>
+  <div class="gallery-grid">
+    <!--
+    📷 GALLERY IMAGES
+    Replace: images/gallery-1.jpg through images/gallery-6.jpg
+    First image spans 2 rows — use a portrait-orientation photo for best result
+    -->
+    <div class="gallery-cell reveal d1">
+      <div class="gallery-ph">images/gallery-1.jpg</div>
+      <img src="images/gallery-1.jpg" alt="Vivencia gallery 1">
+    </div>
+    <div class="gallery-cell reveal d2">
+      <div class="gallery-ph">images/gallery-2.jpg</div>
+      <img src="images/gallery-2.jpg" alt="Vivencia gallery 2">
+    </div>
+    <div class="gallery-cell reveal d3">
+      <div class="gallery-ph">images/gallery-3.jpg</div>
+      <img src="images/gallery-3.jpg" alt="Vivencia gallery 3">
+    </div>
+    <div class="gallery-cell reveal d4">
+      <div class="gallery-ph">images/gallery-4.jpg</div>
+      <img src="images/gallery-4.jpg" alt="Vivencia gallery 4">
+    </div>
+    <div class="gallery-cell reveal d5">
+      <div class="gallery-ph">images/gallery-5.jpg</div>
+      <img src="images/gallery-5.jpg" alt="Vivencia gallery 5">
+    </div>
+    <div class="gallery-cell reveal d6">
+      <div class="gallery-ph">images/gallery-6.jpg</div>
+      <img src="images/gallery-6.jpg" alt="Vivencia gallery 6">
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     TESTIMONIALS
+══════════════════════════ -->
+<section id="testimonials">
+  <div class="tm-wm" aria-hidden="true">LOVE</div>
+  <div class="tm-header">
+    <p class="eyebrow center">Patient Reviews</p>
+    <h2 class="display" style="text-align:center;">Loved by the <em>Community</em></h2>
+  </div>
+
+  <!-- Featured testimonial -->
+  <div class="tm-featured reveal">
+    <div>
+      <div class="tm-stars">
+        <span class="tm-star">★</span><span class="tm-star">★</span><span class="tm-star">★</span><span class="tm-star">★</span><span class="tm-star">★</span>
+      </div>
+      <p class="tm-feat-text">"Dr. Cleo is so thorough and genuinely caring. She explained my prescription, assessed my eye health in depth, and even helped me choose which frames would suit my face. This felt nothing like a clinic visit — more like a personal consultation with a friend who happens to be an expert."</p>
+    </div>
+    <div class="tm-feat-author">
+      <!--
+      📷 Client photo → images/client-1.jpg
+      If no photo, the initials circle shows instead
+      -->
+      <div class="tm-client-photo">
+        <div class="tm-ph">MA</div>
+        <img src="images/client-1.jpg" alt="Maria A." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="tm-name">Maria A.</div>
+      <div class="tm-sub">Calbayog City · Google Review</div>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:rgba(245,239,230,.45);margin-top:16px;line-height:1.5;">"This felt nothing like a clinic visit."</p>
+    </div>
+  </div>
+
+  <!-- 4-card grid -->
+  <div class="tm-grid">
+
+    <div class="tm-card reveal d1">
+      <!--📷 images/client-2.jpg-->
+      <div class="tm-card-photo" style="position:relative;">
+        <div class="tm-ph">JR</div>
+        <img src="images/client-2.jpg" alt="Jules R." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="tm-card-stars"><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span></div>
+      <p class="tm-card-text">"The frame selection is genuinely stylish — I got the JULY crystal pair and have received so many compliments. Love that the exam was already included."</p>
+      <div class="tm-card-name">Jules R.</div>
+      <div class="tm-card-loc">Google Review</div>
+    </div>
+
+    <div class="tm-card reveal d2">
+      <!--📷 images/client-3.jpg-->
+      <div class="tm-card-photo" style="position:relative;">
+        <div class="tm-ph">LD</div>
+        <img src="images/client-3.jpg" alt="Liza D." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="tm-card-stars"><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span></div>
+      <p class="tm-card-text">"Brought my 7-year-old for her first eye exam. Dr. Cleo was incredibly patient. The whole clinic is warm and child-friendly. Already booked our next visit."</p>
+      <div class="tm-card-name">Liza D.</div>
+      <div class="tm-card-loc">Google Review</div>
+    </div>
+
+    <div class="tm-card reveal d3">
+      <!--📷 images/client-4.jpg-->
+      <div class="tm-card-photo" style="position:relative;">
+        <div class="tm-ph">AP</div>
+        <img src="images/client-4.jpg" alt="Ana P." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="tm-card-stars"><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span></div>
+      <p class="tm-card-text">"Never thought I'd say I enjoyed going to the eye clinic. Dr. Cleo made the whole experience relaxed and fun. My new glasses are perfect — I can see and I look great."</p>
+      <div class="tm-card-name">Ana P.</div>
+      <div class="tm-card-loc">Facebook Review</div>
+    </div>
+
+    <div class="tm-card reveal d4">
+      <!--📷 images/client-5.jpg-->
+      <div class="tm-card-photo" style="position:relative;">
+        <div class="tm-ph">RM</div>
+        <img src="images/client-5.jpg" alt="Renz M." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="tm-card-stars"><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span></div>
+      <p class="tm-card-text">"The NOVA frames look exactly like something I'd pay triple for elsewhere. The package deal is unbeatable — exam, lens, case, all in. Will recommend to everyone."</p>
+      <div class="tm-card-name">Renz M.</div>
+      <div class="tm-card-loc">Instagram · @vivenciavisioncare</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-item reveal d1"><div class="trust-num">8K+</div><div class="trust-lbl">Instagram Community</div></div>
+  <div class="trust-div"></div>
+  <div class="trust-item reveal d2"><div class="trust-num">5★</div><div class="trust-lbl">Google Rating</div></div>
+  <div class="trust-div"></div>
+  <div class="trust-item reveal d3"><div class="trust-num">FDA</div><div class="trust-lbl">Registered</div></div>
+  <div class="trust-div"></div>
+  <div class="trust-item reveal d4"><div class="trust-num">9</div><div class="trust-lbl">Services</div></div>
+  <div class="trust-div"></div>
+  <div class="trust-item reveal d5"><div class="trust-num">Daily</div><div class="trust-lbl">Always Open</div></div>
+</div>
+
+<!-- ══════════════════════════
+     LOCATION
+══════════════════════════ -->
+<section id="location">
+  <div class="reveal-left">
+    <div class="map-box">
+      <div class="map-grid"></div>
+      <div class="map-pin-wrap"><div class="map-pin"></div></div>
+      <div class="map-addr-card">
+        <div class="mac-name">Vivencia Vision Care Clinic</div>
+        <div class="mac-addr">P5 Gomez Street, Brgy. Balud, Calbayog City<br><span style="font-size:11px;opacity:.65;">(In front of Calbayog East Central Elementary School)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="loc-right reveal-right">
+    <p class="eyebrow">Hours &amp; Contact</p>
+    <h2 class="display">Visit Us <em>Anytime</em></h2>
+    <div class="hours-block">
+      <div class="hours-row">
+        <span class="hr-day">Monday – Sunday</span>
+        <span class="hr-time">8:00 AM – 6:00 PM</span>
+        <span class="open-pill">Open</span>
+      </div>
+      <div class="hours-row">
+        <span class="hr-day">Public Holidays</span>
+        <span class="hr-time">8:00 AM – 6:00 PM</span>
+        <span class="open-pill">Open</span>
+      </div>
+    </div>
+    <div class="contact-cards">
+      <a href="tel:09532350317" class="cc" aria-label="Call 0953 235 0317">
+        <div class="cc-lbl">Phone 1</div>
+        <div class="cc-val">(0953) 235 0317</div>
+      </a>
+      <a href="tel:09280554597" class="cc" aria-label="Call 0928 055 4597">
+        <div class="cc-lbl">Phone 2</div>
+        <div class="cc-val">(0928) 055 4597</div>
+      </a>
+      <a href="https://www.facebook.com/vivenciavisioncare" target="_blank" rel="noopener" class="cc" aria-label="Facebook">
+        <div class="cc-lbl">Facebook</div>
+        <div class="cc-val">@vivenciavisioncare</div>
+      </a>
+      <a href="https://www.instagram.com/vivenciavisioncare" target="_blank" rel="noopener" class="cc" aria-label="Instagram">
+        <div class="cc-lbl">Instagram</div>
+        <div class="cc-val">@vivenciavisioncare</div>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-brand-name">VIVENCIA</div>
+      <div class="ft-brand-sub">Vision Care Clinic</div>
+      <p class="ft-tagline">Vivencia Vision Care Clinic brings specialist-level eye care to the heart of Calbayog City — paired with eyewear that fits your personality and your life.</p>
+    </div>
+    <div>
+      <div class="ft-col-h">Services</div>
+      <ul class="ft-links">
+        <li><a href="#services">Visual Acuity Testing</a></li>
+        <li><a href="#services">Eye Exams</a></li>
+        <li><a href="#services">Cataract Screening</a></li>
+        <li><a href="#services">Dry Eye</a></li>
+        <li><a href="#services">Fundus Photography</a></li>
+        <li><a href="#services">Color Vision</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="ft-col-h">Eyewear</div>
+      <ul class="ft-links">
+        <li><a href="#eyewear">All Frames</a></li>
+        <li><a href="#eyewear">Transparent</a></li>
+        <li><a href="#eyewear">Full Rim</a></li>
+        <li><a href="#eyewear">Semi-rimless</a></li>
+        <li><a href="#eyewear">Cat Eye</a></li>
+        <li><a href="#collabs">Model Collabs</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="ft-col-h">Visit Us</div>
+      <p class="ft-addr">P5 Gomez Street, Brgy. Balud<br>Calbayog City, Samar<br>Philippines</p>
+      <div class="ft-phones">
+        <a href="tel:09532350317">(0953) 235 0317</a>
+        <a href="tel:09280554597">(0928) 055 4597</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="ft-copy">© 2025 Vivencia Vision Care Clinic. All rights reserved.</span>
+    <div class="ft-socials">
+      <a href="https://www.facebook.com/vivenciavisioncare" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/vivenciavisioncare" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" aria-label="TikTok">TikTok</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating CTA -->
+<a href="tel:09532350317" class="float-cta" id="floatCta" aria-label="Book appointment">
+  <span class="float-pulse"></span>
+  Book Appointment
+</a>
+
+<!-- ══════════════════════════
+     JAVASCRIPT
+══════════════════════════ -->
+<script>
+/* ─── CURSOR ─── */
+const cDot  = document.getElementById('c-dot');
+const cRing = document.getElementById('c-ring');
+let mx=0,my=0,rx=0,ry=0;
+if(window.innerWidth>600){
+  document.addEventListener('mousemove',e=>{
+    mx=e.clientX; my=e.clientY;
+    cDot.style.left=mx+'px'; cDot.style.top=my+'px';
+  });
+  (function loop(){
+    rx+=(mx-rx)*.14; ry+=(my-ry)*.14;
+    cRing.style.left=rx+'px'; cRing.style.top=ry+'px';
+    requestAnimationFrame(loop);
+  })();
+  document.querySelectorAll('a,button,.tilt-card,.frame-card,.svc-card,.tm-card,.video-card,.cc,.gallery-cell')
+    .forEach(el=>{
+      el.addEventListener('mouseenter',()=>document.body.classList.add('cur-hover'));
+      el.addEventListener('mouseleave',()=>document.body.classList.remove('cur-hover'));
+    });
+}
+
+/* ─── NAV SCROLL ─── */
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>80);
+},{passive:true});
+
+/* ─── MOBILE MENU ─── */
+document.getElementById('hamBtn').addEventListener('click',()=>{
+  document.getElementById('mobMenu').classList.add('open');
+  document.body.style.overflow='hidden';
+});
+document.getElementById('mobClose').addEventListener('click',closeMob);
+function closeMob(){
+  document.getElementById('mobMenu').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* ─── SCROLL REVEAL ─── */
+new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('revealed'); }
+  });
+},{threshold:.14}).observe.bind(
+  new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('revealed');
+      }
+    });
+  },{threshold:.14})
+);
+// Simpler approach:
+const revObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('revealed'); }
+  });
+},{threshold:.13});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale')
+  .forEach(el=>revObs.observe(el));
+
+/* ─── FLOATING CTA ─── */
+const floatCta=document.getElementById('floatCta');
+new IntersectionObserver(entries=>{
+  floatCta.classList.toggle('vis',!entries[0].isIntersecting);
+},{threshold:.1}).observe(document.getElementById('hero'));
+
+/* ─── EYEWEAR FILTER ─── */
+document.querySelectorAll('.fb').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.frame-card').forEach(c=>{
+      c.classList.toggle('hidden', f!=='all' && c.dataset.category!==f);
+    });
+  });
+});
+
+/* ─── SWATCH INTERACTION
+       (swatches on frame cards — clicking activates the swatch visually)
+       To make swatches change the actual photo, you'd need different image
+       files per color — add them as: images/frame-july-crystal.jpg etc.
+       For now, swatches simply show which color is "selected".
+─── */
+document.querySelectorAll('.swatches').forEach(row=>{
+  row.querySelectorAll('.sw').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      row.querySelectorAll('.sw').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+});
+
+/* ─── 3D CARD TILT ─── */
+document.querySelectorAll('.tilt-card').forEach(card=>{
+  const MAX=12; // max degrees of tilt
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=e.clientX-r.left;
+    const y=e.clientY-r.top;
+    const cx=r.width/2, cy=r.height/2;
+    const rotY=((x-cx)/cx)*MAX;
+    const rotX=-((y-cy)/cy)*MAX;
+    card.style.transform=`perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(6px)`;
+    card.style.boxShadow=`${-rotY*1.5}px ${rotX*1.5}px 40px rgba(59,31,13,0.18)`;
+  });
+  card.addEventListener('mouseleave',()=>{
+    card.style.transform='perspective(800px) rotateX(0) rotateY(0) translateZ(0)';
+    card.style.boxShadow='';
+    card.style.transition='transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s';
+  });
+  card.addEventListener('mouseenter',()=>{
+    card.style.transition='none';
+  });
+});
+
+/* ─── VIDEO PLAY ON CLICK ─── */
+document.querySelectorAll('.video-card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    const vid=card.querySelector('video');
+    const poster=card.querySelector('.video-poster');
+    const playBtn=card.querySelector('.play-btn');
+    if(!vid) return;
+    if(vid.paused){
+      vid.play().then(()=>{
+        if(poster) poster.style.opacity='0';
+        if(playBtn) playBtn.style.opacity='0';
+        vid.style.zIndex='2';
+      }).catch(()=>{
+        // video file not found — silently ignore
+      });
+    } else {
+      vid.pause();
+      if(poster){ poster.style.opacity='1'; poster.style.transition='opacity .3s'; }
+      if(playBtn){ playBtn.style.opacity='1'; playBtn.style.transition='opacity .3s'; }
+    }
+  });
+});
+
+/* ─── HERO PARALLAX ON MOUSE MOVE ─── */
+const heroSection=document.getElementById('hero');
+const heroLeft=document.querySelector('.hero-left');
+const heroRight=document.querySelector('.hero-right');
+if(window.innerWidth>900){
+  heroSection.addEventListener('mousemove',e=>{
+    const r=heroSection.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width - .5;
+    const y=(e.clientY-r.top)/r.height  - .5;
+    // Subtle depth shift on hero elements
+    heroLeft.style.transform=`translate(${x*6}px,${y*4}px)`;
+    const img=heroRight.querySelector('img');
+    if(img) img.style.transform=`scale(1.04) translate(${-x*10}px,${-y*6}px)`;
+  });
+  heroSection.addEventListener('mouseleave',()=>{
+    heroLeft.style.transform='';
+    const img=heroRight.querySelector('img');
+    if(img) img.style.transform='scale(1.04)';
+  });
+}
+</script>
+</body>
+</html>
