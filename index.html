@@ -3,11 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vivencia Vision Care Clinic | Calbayog City</title>
-<meta name="description" content="Doctor-led eye care and curated eyewear in Calbayog City, Samar. Led by Dr. Cleo Dawn Camarines, O.D.">
-<meta property="og:title" content="Vivencia Vision Care Clinic | Calbayog City">
-<meta property="og:description" content="Clinical eye care meets personal style. Comprehensive eye exams, premium eyewear, and specialist optometry in Calbayog City, Samar.">
+<title>Vivencia Vision Care Clinic | Eye Exams &amp; Eyewear in Calbayog City</title>
+<meta name="description" content="Doctor-led eye care and curated eyewear in Calbayog City, Samar. Comprehensive eye exams, cataract screening, dry eye management &amp; premium frames. Led by Dr. Cleo Dawn Camarines, O.D. Open daily 8AM–6PM.">
+
+<!-- ⚠️ SEO: Change this to your real domain once live (e.g. https://vivenciavisioncare.com/) -->
+<link rel="canonical" href="https://vivenciavisioncare.com/">
+
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#3B1F0D">
+<meta name="geo.region" content="PH-WSA">
+<meta name="geo.placename" content="Calbayog City, Samar">
+<meta name="author" content="Vivencia Vision Care Clinic">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Vivencia Vision Care Clinic | Eye Exams &amp; Eyewear in Calbayog City">
+<meta property="og:description" content="Clinical eye care meets personal style. Comprehensive eye exams, premium eyewear, and specialist optometry in Calbayog City, Samar. Open daily 8AM–6PM.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://vivenciavisioncare.com/">
+<meta property="og:image" content="https://vivenciavisioncare.com/images/hero-model.jpg">
+<meta property="og:locale" content="en_PH">
+<meta property="og:site_name" content="Vivencia Vision Care Clinic">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vivencia Vision Care Clinic | Calbayog City">
+<meta name="twitter:description" content="Doctor-led eye care and curated eyewear in Calbayog City, Samar. Open daily 8AM–6PM.">
+<meta name="twitter:image" content="https://vivenciavisioncare.com/images/hero-model.jpg">
+
+<!-- Structured data: helps Google show hours, phone, map & star ratings -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Optician",
+  "@id": "https://vivenciavisioncare.com/#clinic",
+  "name": "Vivencia Vision Care Clinic",
+  "description": "Doctor-led eye care clinic and eyewear boutique in Calbayog City, Samar. Comprehensive eye exams, cataract screening, dry eye management, pediatric eye care, and curated frames.",
+  "url": "https://vivenciavisioncare.com/",
+  "image": "https://vivenciavisioncare.com/images/clinic-interior.jpg",
+  "logo": "https://vivenciavisioncare.com/images/hero-model.jpg",
+  "telephone": ["+639532350317", "+639280554597"],
+  "priceRange": "₱₱",
+  "foundingDate": "2023",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "P5 Gomez Street, Brgy. Balud",
+    "addressLocality": "Calbayog City",
+    "addressRegion": "Samar",
+    "addressCountry": "PH"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 12.0668,
+    "longitude": 124.5963
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "08:00",
+    "closes": "18:00"
+  }],
+  "sameAs": [
+    "https://www.facebook.com/vivenciavisioncare",
+    "https://www.instagram.com/vivenciavisioncare"
+  ],
+  "employee": {
+    "@type": "Person",
+    "name": "Dr. Cleo Dawn Camarines",
+    "jobTitle": "Optometrist, O.D."
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Eye Care Services",
+    "itemListElement": [
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Comprehensive Eye Exam"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Visual Acuity Testing"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Cataract Screening"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Dry Eye Management"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Fundus Photography"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Pediatric Eye Care"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Eyeglasses & Contact Lens Dispensing"}}
+    ]
+  }
+}
+</script>
 
 <!--
 ╔══════════════════════════════════════════════════════════════════╗
@@ -171,7 +249,11 @@ video {
 }
 body.cur-hover #c-dot { width: 22px; height: 22px; }
 body.cur-hover #c-ring { width: 60px; height: 60px; border-color: rgba(59,31,13,.25); }
-@media (max-width:600px) { #c-dot,#c-ring { display:none; } }
+@media (max-width:600px), (pointer:coarse), (prefers-reduced-motion:reduce) {
+  #c-dot,#c-ring { display:none; }
+  body, .hamburger, .mob-close { cursor:auto; }
+  a, button { cursor:pointer; }
+}
 
 /* ===========================
    SCROLL REVEAL
@@ -448,9 +530,21 @@ nav#nav.scrolled {
 }
 .hero-right-img img { position:relative; z-index:1; }
 
+/* 3D eyewear canvas — sits above the photo, below the overlay text */
+#hero3d {
+  position:absolute; inset:0; z-index:2;
+  opacity:0; transition:opacity 1.2s ease;
+  cursor:grab;
+}
+#hero3d.ready { opacity:1; }
+#hero3d.grabbing { cursor:grabbing; }
+#hero3d canvas { display:block; width:100%; height:100%; }
+/* When 3D is active, dim the photo so the frame pops */
+.hero-right.has3d .hero-right-img img { filter:brightness(.55) saturate(.85); transition:filter 1.2s ease; }
+
 /* Dark gradient overlay on hero right */
 .hero-right-overlay {
-  position:absolute; inset:0; z-index:2;
+  position:absolute; inset:0; z-index:3; pointer-events:none;
   background:linear-gradient(to right, rgba(59,31,13,.5) 0%, transparent 60%),
              linear-gradient(to top, rgba(10,4,1,.6) 0%, transparent 50%);
 }
@@ -1469,7 +1563,62 @@ footer {
 @media (max-width:600px) {
   .float-cta { bottom:18px; right:18px; }
 }
+
+/* ===========================
+   PERFORMANCE & ACCESSIBILITY
+=========================== */
+/* Browser skips rendering below-the-fold sections until you scroll near them
+   — big win for initial paint speed */
+#services, #process, #collabs, #eyewear, #gallery, #testimonials, #location, footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}
+
+/* Respect users (and Google Lighthouse) who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal, .reveal-left, .reveal-right, .reveal-scale { opacity:1; transform:none; }
+  .hero-line-inner { transform:none; }
+  .h-eyebrow, .hero-desc, .hero-actions, .hero-float-badge, .hero-credit { opacity:1; }
+  .marquee-track { animation:none; }
+  #hero3d { display:none; }
+}
+
+/* Mobile polish */
+@media (max-width:900px) {
+  /* comfortable tap targets */
+  .btn, .fb, .cc, .float-cta, .mob-menu a { min-height:44px; }
+  .nav-links a, .ft-links a { padding:6px 0; display:inline-block; }
+}
+@media (max-width:600px) {
+  /* keep the floating CTA clear of iPhone home bar */
+  .float-cta { bottom: calc(20px + env(safe-area-inset-bottom)); }
+  /* marquee is decorative — slow it slightly so it doesn't eat battery */
+  .marquee-track { animation-duration: 40s; }
+}
+/* no blue flash on tap (Android/iOS) */
+a, button { -webkit-tap-highlight-color: transparent; }
+
+/* smoother font rendering */
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
 </style>
+
+<!-- If JavaScript is disabled or fails, show all content immediately
+     (scroll-reveal animations normally hide sections until JS reveals them) -->
+<noscript>
+<style>
+  .reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:1!important;transform:none!important;}
+  .hero-line-inner{transform:none!important;animation:none!important;}
+  .h-eyebrow,.hero-desc,.hero-actions,.hero-float-badge,.hero-credit{opacity:1!important;}
+  #c-dot,#c-ring{display:none;} body{cursor:auto;} a,button{cursor:pointer;}
+</style>
+</noscript>
 </head>
 <body>
 
@@ -1504,7 +1653,7 @@ footer {
   <div class="nav-cta-wrap">
     <a href="tel:09532350317" class="btn btn-dark" aria-label="Book appointment">Book Appointment</a>
   </div>
-  <button class="hamburger" id="hamBtn" aria-label="Open menu">
+  <button class="hamburger" id="hamBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobMenu">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -1553,8 +1702,12 @@ footer {
     ╚═══════════════════════════════════════════════╝
     -->
     <div class="hero-right-img">
-      <img src="images/hero-model.jpg" alt="Vivencia Vision Care — eyewear model">
+      <img fetchpriority="high" decoding="async" width="960" height="1200" src="images/hero-model.jpg" alt="Vivencia Vision Care — eyewear model">
     </div>
+
+    <!-- 3D rotating eyewear frame (loads after page paint — zero impact on load speed).
+         Fades in over the photo. Drag/move mouse to tilt it. -->
+    <div id="hero3d" aria-hidden="true"></div>
 
     <div class="hero-right-overlay"></div>
     <div class="hero-wm">See.</div>
@@ -1616,7 +1769,7 @@ footer {
       <div class="img-placeholder-box" style="width:100%;height:100%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);">
         images/doctor.jpg
       </div>
-      <img src="images/doctor.jpg" alt="Dr. Cleo Dawn Camarines, O.D." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+      <img loading="lazy" decoding="async" src="images/doctor.jpg" alt="Dr. Cleo Dawn Camarines, O.D." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     </div>
 
     <!--
@@ -1627,7 +1780,7 @@ footer {
       <div class="img-placeholder-box" style="width:100%;height:100%;background:var(--cream-deep);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--sand);">
         images/clinic-interior.jpg
       </div>
-      <img src="images/clinic-interior.jpg" alt="Vivencia Clinic interior" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+      <img loading="lazy" decoding="async" src="images/clinic-interior.jpg" alt="Vivencia Clinic interior" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     </div>
 
     <!-- Floating stat card -->
@@ -1860,12 +2013,12 @@ footer {
         <video
           src="videos/collab-1.mp4"
           poster="images/collab-poster-1.jpg"
-          loop muted playsinline
+          loop muted playsinline preload="none"
           data-video="true"
         ></video>
         <!-- Shown if no poster image is found -->
         <div class="video-poster">
-          <img src="images/collab-poster-1.jpg" alt="Model collaboration 1">
+          <img loading="lazy" decoding="async" src="images/collab-poster-1.jpg" alt="Model collaboration 1">
         </div>
         <div class="play-btn">
           <div class="play-circle">
@@ -1893,11 +2046,11 @@ footer {
           <video
             src="videos/collab-2.mp4"
             poster="images/collab-poster-2.jpg"
-            loop muted playsinline
+            loop muted playsinline preload="none"
             data-video="true"
           ></video>
           <div class="video-poster">
-            <img src="images/collab-poster-2.jpg" alt="Model collaboration 2">
+            <img loading="lazy" decoding="async" src="images/collab-poster-2.jpg" alt="Model collaboration 2">
           </div>
           <div class="play-btn">
             <div class="play-circle">
@@ -1923,11 +2076,11 @@ footer {
           <video
             src="videos/collab-3.mp4"
             poster="images/collab-poster-3.jpg"
-            loop muted playsinline
+            loop muted playsinline preload="none"
             data-video="true"
           ></video>
           <div class="video-poster">
-            <img src="images/collab-poster-3.jpg" alt="Model collaboration 3">
+            <img loading="lazy" decoding="async" src="images/collab-poster-3.jpg" alt="Model collaboration 3">
           </div>
           <div class="play-btn">
             <div class="play-circle">
@@ -1988,7 +2141,7 @@ footer {
       <div class="frame-img-zone">
         <span class="frame-badge-abs badge-bundle">Bundle</span>
         <div class="frame-img-ph">images/frame-july.jpg</div>
-        <img src="images/frame-july.jpg" alt="JULY transparent rectangular frame" id="img-july">
+        <img loading="lazy" decoding="async" src="images/frame-july.jpg" alt="JULY transparent rectangular frame" id="img-july">
       </div>
       <div class="frame-body">
         <div class="frame-coll-lbl">Vivencia Collection</div>
@@ -2017,7 +2170,7 @@ footer {
       <div class="frame-img-zone">
         <span class="frame-badge-abs badge-new">New In</span>
         <div class="frame-img-ph">images/frame-nova.jpg</div>
-        <img src="images/frame-nova.jpg" alt="NOVA full-rim oval frame" id="img-nova">
+        <img loading="lazy" decoding="async" src="images/frame-nova.jpg" alt="NOVA full-rim oval frame" id="img-nova">
       </div>
       <div class="frame-body">
         <div class="frame-coll-lbl">Vivencia Collection</div>
@@ -2045,7 +2198,7 @@ footer {
     <div class="frame-card reveal d3" data-category="semi-rimless">
       <div class="frame-img-zone">
         <div class="frame-img-ph">images/frame-alba.jpg</div>
-        <img src="images/frame-alba.jpg" alt="ALBA semi-rimless round frame" id="img-alba">
+        <img loading="lazy" decoding="async" src="images/frame-alba.jpg" alt="ALBA semi-rimless round frame" id="img-alba">
       </div>
       <div class="frame-body">
         <div class="frame-coll-lbl">Vivencia Collection</div>
@@ -2073,7 +2226,7 @@ footer {
       <div class="frame-img-zone">
         <span class="frame-badge-abs badge-new">New In</span>
         <div class="frame-img-ph">images/frame-luna.jpg</div>
-        <img src="images/frame-luna.jpg" alt="LUNA transparent cat-eye frame" id="img-luna">
+        <img loading="lazy" decoding="async" src="images/frame-luna.jpg" alt="LUNA transparent cat-eye frame" id="img-luna">
       </div>
       <div class="frame-body">
         <div class="frame-coll-lbl">Vivencia Collection</div>
@@ -2100,7 +2253,7 @@ footer {
     <div class="frame-card reveal d5" data-category="full-rim">
       <div class="frame-img-zone">
         <div class="frame-img-ph">images/frame-rei.jpg</div>
-        <img src="images/frame-rei.jpg" alt="REI full-rim square frame" id="img-rei">
+        <img loading="lazy" decoding="async" src="images/frame-rei.jpg" alt="REI full-rim square frame" id="img-rei">
       </div>
       <div class="frame-body">
         <div class="frame-coll-lbl">Vivencia Collection</div>
@@ -2128,7 +2281,7 @@ footer {
       <div class="frame-img-zone">
         <span class="frame-badge-abs badge-new">New In</span>
         <div class="frame-img-ph">images/frame-mira.jpg</div>
-        <img src="images/frame-mira.jpg" alt="MIRA transparent round frame" id="img-mira">
+        <img loading="lazy" decoding="async" src="images/frame-mira.jpg" alt="MIRA transparent round frame" id="img-mira">
       </div>
       <div class="frame-body">
         <div class="frame-coll-lbl">Vivencia Collection</div>
@@ -2189,27 +2342,27 @@ footer {
     -->
     <div class="gallery-cell reveal d1">
       <div class="gallery-ph">images/gallery-1.jpg</div>
-      <img src="images/gallery-1.jpg" alt="Vivencia gallery 1">
+      <img loading="lazy" decoding="async" src="images/gallery-1.jpg" alt="Vivencia gallery 1">
     </div>
     <div class="gallery-cell reveal d2">
       <div class="gallery-ph">images/gallery-2.jpg</div>
-      <img src="images/gallery-2.jpg" alt="Vivencia gallery 2">
+      <img loading="lazy" decoding="async" src="images/gallery-2.jpg" alt="Vivencia gallery 2">
     </div>
     <div class="gallery-cell reveal d3">
       <div class="gallery-ph">images/gallery-3.jpg</div>
-      <img src="images/gallery-3.jpg" alt="Vivencia gallery 3">
+      <img loading="lazy" decoding="async" src="images/gallery-3.jpg" alt="Vivencia gallery 3">
     </div>
     <div class="gallery-cell reveal d4">
       <div class="gallery-ph">images/gallery-4.jpg</div>
-      <img src="images/gallery-4.jpg" alt="Vivencia gallery 4">
+      <img loading="lazy" decoding="async" src="images/gallery-4.jpg" alt="Vivencia gallery 4">
     </div>
     <div class="gallery-cell reveal d5">
       <div class="gallery-ph">images/gallery-5.jpg</div>
-      <img src="images/gallery-5.jpg" alt="Vivencia gallery 5">
+      <img loading="lazy" decoding="async" src="images/gallery-5.jpg" alt="Vivencia gallery 5">
     </div>
     <div class="gallery-cell reveal d6">
       <div class="gallery-ph">images/gallery-6.jpg</div>
-      <img src="images/gallery-6.jpg" alt="Vivencia gallery 6">
+      <img loading="lazy" decoding="async" src="images/gallery-6.jpg" alt="Vivencia gallery 6">
     </div>
   </div>
 </section>
@@ -2239,7 +2392,7 @@ footer {
       -->
       <div class="tm-client-photo">
         <div class="tm-ph">MA</div>
-        <img src="images/client-1.jpg" alt="Maria A." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <img loading="lazy" decoding="async" src="images/client-1.jpg" alt="Maria A." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
       </div>
       <div class="tm-name">Maria A.</div>
       <div class="tm-sub">Calbayog City · Google Review</div>
@@ -2254,7 +2407,7 @@ footer {
       <!--📷 images/client-2.jpg-->
       <div class="tm-card-photo" style="position:relative;">
         <div class="tm-ph">JR</div>
-        <img src="images/client-2.jpg" alt="Jules R." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <img loading="lazy" decoding="async" src="images/client-2.jpg" alt="Jules R." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
       </div>
       <div class="tm-card-stars"><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span></div>
       <p class="tm-card-text">"The frame selection is genuinely stylish — I got the JULY crystal pair and have received so many compliments. Love that the exam was already included."</p>
@@ -2266,7 +2419,7 @@ footer {
       <!--📷 images/client-3.jpg-->
       <div class="tm-card-photo" style="position:relative;">
         <div class="tm-ph">LD</div>
-        <img src="images/client-3.jpg" alt="Liza D." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <img loading="lazy" decoding="async" src="images/client-3.jpg" alt="Liza D." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
       </div>
       <div class="tm-card-stars"><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span></div>
       <p class="tm-card-text">"Brought my 7-year-old for her first eye exam. Dr. Cleo was incredibly patient. The whole clinic is warm and child-friendly. Already booked our next visit."</p>
@@ -2278,7 +2431,7 @@ footer {
       <!--📷 images/client-4.jpg-->
       <div class="tm-card-photo" style="position:relative;">
         <div class="tm-ph">AP</div>
-        <img src="images/client-4.jpg" alt="Ana P." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <img loading="lazy" decoding="async" src="images/client-4.jpg" alt="Ana P." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
       </div>
       <div class="tm-card-stars"><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span></div>
       <p class="tm-card-text">"Never thought I'd say I enjoyed going to the eye clinic. Dr. Cleo made the whole experience relaxed and fun. My new glasses are perfect — I can see and I look great."</p>
@@ -2290,7 +2443,7 @@ footer {
       <!--📷 images/client-5.jpg-->
       <div class="tm-card-photo" style="position:relative;">
         <div class="tm-ph">RM</div>
-        <img src="images/client-5.jpg" alt="Renz M." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <img loading="lazy" decoding="async" src="images/client-5.jpg" alt="Renz M." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
       </div>
       <div class="tm-card-stars"><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span><span class="tm-card-star">★</span></div>
       <p class="tm-card-text">"The NOVA frames look exactly like something I'd pay triple for elsewhere. The package deal is unbeatable — exam, lens, case, all in. Will recommend to everyone."</p>
@@ -2425,18 +2578,23 @@ footer {
      JAVASCRIPT
 ══════════════════════════ -->
 <script>
-/* ─── CURSOR ─── */
+/* ─── DEVICE / MOTION FLAGS (used everywhere below) ─── */
+const FINE_POINTER   = window.matchMedia('(pointer:fine)').matches;      // real mouse, not touch
+const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const SAVE_DATA      = navigator.connection && navigator.connection.saveData;
+
+/* ─── CURSOR (mouse devices only, GPU transforms — no layout work) ─── */
 const cDot  = document.getElementById('c-dot');
 const cRing = document.getElementById('c-ring');
 let mx=0,my=0,rx=0,ry=0;
-if(window.innerWidth>600){
+if(FINE_POINTER && !REDUCED_MOTION){
   document.addEventListener('mousemove',e=>{
     mx=e.clientX; my=e.clientY;
-    cDot.style.left=mx+'px'; cDot.style.top=my+'px';
-  });
+    cDot.style.transform=`translate3d(${mx}px,${my}px,0) translate(-50%,-50%)`;
+  },{passive:true});
   (function loop(){
     rx+=(mx-rx)*.14; ry+=(my-ry)*.14;
-    cRing.style.left=rx+'px'; cRing.style.top=ry+'px';
+    cRing.style.transform=`translate3d(${rx}px,${ry}px,0) translate(-50%,-50%)`;
     requestAnimationFrame(loop);
   })();
   document.querySelectorAll('a,button,.tilt-card,.frame-card,.svc-card,.tm-card,.video-card,.cc,.gallery-cell')
@@ -2444,6 +2602,9 @@ if(window.innerWidth>600){
       el.addEventListener('mouseenter',()=>document.body.classList.add('cur-hover'));
       el.addEventListener('mouseleave',()=>document.body.classList.remove('cur-hover'));
     });
+} else {
+  if(cDot) cDot.style.display='none';
+  if(cRing) cRing.style.display='none';
 }
 
 /* ─── NAV SCROLL ─── */
@@ -2453,36 +2614,30 @@ window.addEventListener('scroll',()=>{
 },{passive:true});
 
 /* ─── MOBILE MENU ─── */
-document.getElementById('hamBtn').addEventListener('click',()=>{
-  document.getElementById('mobMenu').classList.add('open');
+const hamBtn = document.getElementById('hamBtn');
+const mobMenu = document.getElementById('mobMenu');
+hamBtn.addEventListener('click',()=>{
+  mobMenu.classList.add('open');
+  hamBtn.setAttribute('aria-expanded','true');
   document.body.style.overflow='hidden';
 });
 document.getElementById('mobClose').addEventListener('click',closeMob);
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMob(); });
 function closeMob(){
-  document.getElementById('mobMenu').classList.remove('open');
+  mobMenu.classList.remove('open');
+  hamBtn.setAttribute('aria-expanded','false');
   document.body.style.overflow='';
 }
 
 /* ─── SCROLL REVEAL ─── */
-new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){ e.target.classList.add('revealed'); }
-  });
-},{threshold:.14}).observe.bind(
-  new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        e.target.classList.add('revealed');
-      }
-    });
-  },{threshold:.14})
-);
-// Simpler approach:
 const revObs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
-    if(e.isIntersecting){ e.target.classList.add('revealed'); }
+    if(e.isIntersecting){
+      e.target.classList.add('revealed');
+      revObs.unobserve(e.target);   // stop watching once revealed — saves CPU
+    }
   });
-},{threshold:.13});
+},{threshold:.13, rootMargin:'0px 0px -5% 0px'});
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale')
   .forEach(el=>revObs.observe(el));
 
@@ -2519,19 +2674,24 @@ document.querySelectorAll('.swatches').forEach(row=>{
   });
 });
 
-/* ─── 3D CARD TILT ─── */
-document.querySelectorAll('.tilt-card').forEach(card=>{
+/* ─── 3D CARD TILT (mouse only, frame-throttled) ─── */
+if(FINE_POINTER && !REDUCED_MOTION) document.querySelectorAll('.tilt-card').forEach(card=>{
   const MAX=12; // max degrees of tilt
+  let tf=null;
   card.addEventListener('mousemove',e=>{
-    const r=card.getBoundingClientRect();
-    const x=e.clientX-r.left;
-    const y=e.clientY-r.top;
-    const cx=r.width/2, cy=r.height/2;
-    const rotY=((x-cx)/cx)*MAX;
-    const rotX=-((y-cy)/cy)*MAX;
-    card.style.transform=`perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(6px)`;
-    card.style.boxShadow=`${-rotY*1.5}px ${rotX*1.5}px 40px rgba(59,31,13,0.18)`;
-  });
+    if(tf) return;                      // max one update per frame
+    tf=requestAnimationFrame(()=>{
+      tf=null;
+      const r=card.getBoundingClientRect();
+      const x=e.clientX-r.left;
+      const y=e.clientY-r.top;
+      const cx=r.width/2, cy=r.height/2;
+      const rotY=((x-cx)/cx)*MAX;
+      const rotX=-((y-cy)/cy)*MAX;
+      card.style.transform=`perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(6px)`;
+      card.style.boxShadow=`${-rotY*1.5}px ${rotX*1.5}px 40px rgba(59,31,13,0.18)`;
+    });
+  },{passive:true});
   card.addEventListener('mouseleave',()=>{
     card.style.transform='perspective(800px) rotateX(0) rotateY(0) translateZ(0)';
     card.style.boxShadow='';
@@ -2569,22 +2729,226 @@ document.querySelectorAll('.video-card').forEach(card=>{
 const heroSection=document.getElementById('hero');
 const heroLeft=document.querySelector('.hero-left');
 const heroRight=document.querySelector('.hero-right');
-if(window.innerWidth>900){
+if(FINE_POINTER && !REDUCED_MOTION && window.innerWidth>900){
+  let pf=null;
   heroSection.addEventListener('mousemove',e=>{
-    const r=heroSection.getBoundingClientRect();
-    const x=(e.clientX-r.left)/r.width - .5;
-    const y=(e.clientY-r.top)/r.height  - .5;
-    // Subtle depth shift on hero elements
-    heroLeft.style.transform=`translate(${x*6}px,${y*4}px)`;
-    const img=heroRight.querySelector('img');
-    if(img) img.style.transform=`scale(1.04) translate(${-x*10}px,${-y*6}px)`;
-  });
+    if(pf) return;
+    pf=requestAnimationFrame(()=>{
+      pf=null;
+      const r=heroSection.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width - .5;
+      const y=(e.clientY-r.top)/r.height  - .5;
+      heroLeft.style.transform=`translate(${x*6}px,${y*4}px)`;
+      const img=heroRight.querySelector('img');
+      if(img) img.style.transform=`scale(1.04) translate(${-x*10}px,${-y*6}px)`;
+    });
+  },{passive:true});
   heroSection.addEventListener('mouseleave',()=>{
     heroLeft.style.transform='';
     const img=heroRight.querySelector('img');
     if(img) img.style.transform='scale(1.04)';
   });
 }
+
+/* ═══════════════════════════════════════════════════════════
+   3D ROTATING EYEWEAR FRAME  (hero section)
+   ───────────────────────────────────────────────────────────
+   • Loads Three.js ONLY after the page has fully painted
+     (requestIdleCallback) — zero impact on load speed / SEO.
+   • Skipped entirely on reduced-motion, data-saver, or
+     devices without WebGL. The hero photo remains as fallback.
+   • Pauses when scrolled away or tab hidden — saves battery.
+   • Drag (or swipe on the panel) to spin the frame.
+═══════════════════════════════════════════════════════════ */
+(function(){
+  const holder = document.getElementById('hero3d');
+  if(!holder || REDUCED_MOTION || SAVE_DATA) return;
+
+  // quick WebGL support check
+  try {
+    const c = document.createElement('canvas');
+    if(!(c.getContext('webgl') || c.getContext('experimental-webgl'))) return;
+  } catch(e){ return; }
+
+  let started = false;
+  function boot(){
+    if(started) return; started = true;
+    const s = document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+    s.async = true;
+    s.onload = initGlasses;
+    document.body.appendChild(s);
+  }
+  // wait for full page load, then for an idle moment
+  if(document.readyState === 'complete'){
+    (window.requestIdleCallback || setTimeout)(boot, 200);
+  } else {
+    window.addEventListener('load', ()=> (window.requestIdleCallback || setTimeout)(boot, 200));
+  }
+
+  function initGlasses(){
+    const W = ()=>holder.clientWidth, H = ()=>holder.clientHeight;
+
+    const renderer = new THREE.WebGLRenderer({ alpha:true, antialias:window.devicePixelRatio < 2 });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(W(), H());
+    holder.appendChild(renderer.domElement);
+
+    const scene  = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(34, W()/H(), 0.1, 100);
+    camera.position.set(0, 0.1, 9);
+
+    /* ── warm brand lighting ── */
+    scene.add(new THREE.AmbientLight(0xF5EFE6, 0.55));
+    const key = new THREE.DirectionalLight(0xFFF3E0, 1.15); key.position.set(4, 5, 6);  scene.add(key);
+    const fill= new THREE.DirectionalLight(0xC4A882, 0.45); fill.position.set(-5, -2, 4); scene.add(fill);
+    const rim = new THREE.DirectionalLight(0xFDFAF6, 0.9);  rim.position.set(0, 3, -6);   scene.add(rim);
+
+    /* ── materials ── */
+    const acetate = new THREE.MeshPhysicalMaterial({
+      color: 0x4A2410, roughness: 0.22, metalness: 0.05,
+      clearcoat: 1.0, clearcoatRoughness: 0.15
+    });
+    const gold = new THREE.MeshPhysicalMaterial({
+      color: 0xC9A05A, roughness: 0.25, metalness: 0.9
+    });
+    const lensMat = new THREE.MeshPhysicalMaterial({
+      color: 0xEADFC9, roughness: 0.05, metalness: 0,
+      transparent: true, opacity: 0.22, side: THREE.DoubleSide
+    });
+
+    /* ── rounded-rectangle lens shape with hole ── */
+    function roundedRect(w, h, r){
+      const s = new THREE.Shape();
+      s.moveTo(-w/2 + r, -h/2);
+      s.lineTo( w/2 - r, -h/2); s.quadraticCurveTo( w/2, -h/2,  w/2, -h/2 + r);
+      s.lineTo( w/2,  h/2 - r); s.quadraticCurveTo( w/2,  h/2,  w/2 - r,  h/2);
+      s.lineTo(-w/2 + r,  h/2); s.quadraticCurveTo(-w/2,  h/2, -w/2,  h/2 - r);
+      s.lineTo(-w/2, -h/2 + r); s.quadraticCurveTo(-w/2, -h/2, -w/2 + r, -h/2);
+      return s;
+    }
+    const RW = 1.9, RH = 1.35, RR = 0.55, T = 0.13;   // rim outer size, corner radius, rim thickness
+    function makeRim(){
+      const outer = roundedRect(RW, RH, RR);
+      const inner = roundedRect(RW - T*2, RH - T*2, Math.max(RR - T, 0.2));
+      outer.holes.push(inner);
+      const geo = new THREE.ExtrudeGeometry(outer, { depth: 0.16, bevelEnabled: true, bevelThickness: 0.03, bevelSize: 0.03, bevelSegments: 3, curveSegments: 24 });
+      geo.center();
+      return new THREE.Mesh(geo, acetate);
+    }
+    function makeLens(){
+      const geo = new THREE.ShapeGeometry(roundedRect(RW - T*2, RH - T*2, Math.max(RR - T, 0.2)), 24);
+      return new THREE.Mesh(geo, lensMat);
+    }
+
+    const glasses = new THREE.Group();
+    const GAP = 0.55;                          // bridge gap
+    const xOff = RW/2 + GAP/2;
+
+    const rimL = makeRim();  rimL.position.x = -xOff;
+    const rimR = makeRim();  rimR.position.x =  xOff;
+    const lenL = makeLens(); lenL.position.set(-xOff, 0, 0.02);
+    const lenR = makeLens(); lenR.position.set( xOff, 0, 0.02);
+    glasses.add(rimL, rimR, lenL, lenR);
+
+    /* bridge — gentle arc */
+    const bridgeCurve = new THREE.QuadraticBezierCurve3(
+      new THREE.Vector3(-GAP/2 - 0.05, 0.42, 0),
+      new THREE.Vector3(0, 0.58, 0.05),
+      new THREE.Vector3( GAP/2 + 0.05, 0.42, 0)
+    );
+    glasses.add(new THREE.Mesh(new THREE.TubeGeometry(bridgeCurve, 16, 0.055, 10), acetate));
+
+    /* nose pads */
+    [-1, 1].forEach(sgn=>{
+      const pad = new THREE.Mesh(new THREE.SphereGeometry(0.07, 10, 10), gold);
+      pad.position.set(sgn * (GAP/2 + 0.12), 0.05, 0.12);
+      glasses.add(pad);
+    });
+
+    /* temples (arms) — angled back with an ear curve */
+    function makeTemple(sgn){
+      const g = new THREE.Group();
+      const hingeX = sgn * (xOff + RW/2 - T/2);
+      // hinge
+      const hinge = new THREE.Mesh(new THREE.CylinderGeometry(0.055, 0.055, 0.2, 12), gold);
+      hinge.rotation.x = Math.PI/2;
+      hinge.position.set(hingeX, 0.35, 0);
+      g.add(hinge);
+      // arm: straight run then curve down behind the ear
+      const pts = [
+        new THREE.Vector3(hingeX, 0.35, 0.05),
+        new THREE.Vector3(hingeX + sgn*0.1, 0.36, -1.4),
+        new THREE.Vector3(hingeX + sgn*0.12, 0.3, -2.6),
+        new THREE.Vector3(hingeX + sgn*0.1, -0.15, -3.15),
+        new THREE.Vector3(hingeX + sgn*0.05, -0.55, -3.3)
+      ];
+      const curve = new THREE.CatmullRomCurve3(pts);
+      g.add(new THREE.Mesh(new THREE.TubeGeometry(curve, 24, 0.05, 8), acetate));
+      return g;
+    }
+    glasses.add(makeTemple(-1), makeTemple(1));
+
+    glasses.rotation.x = 0.06;
+    scene.add(glasses);
+
+    /* ── interaction: auto-rotate + drag to spin ── */
+    let targetY = 0, velY = 0.004, dragging = false, lastX = 0, userSpun = 0;
+    const onDown = e => { dragging = true; holder.classList.add('grabbing'); lastX = (e.touches ? e.touches[0].clientX : e.clientX); };
+    const onMove = e => {
+      if(!dragging) return;
+      const x = (e.touches ? e.touches[0].clientX : e.clientX);
+      userSpun += (x - lastX) * 0.008;
+      lastX = x;
+    };
+    const onUp = () => { dragging = false; holder.classList.remove('grabbing'); };
+    holder.addEventListener('mousedown', onDown);
+    holder.addEventListener('mousemove', onMove, {passive:true});
+    window.addEventListener('mouseup', onUp);
+    holder.addEventListener('touchstart', onDown, {passive:true});
+    holder.addEventListener('touchmove', onMove, {passive:true});
+    holder.addEventListener('touchend', onUp);
+
+    /* ── pause when hero off-screen or tab hidden ── */
+    let visible = true, raf = null;
+    new IntersectionObserver(en => {
+      visible = en[0].isIntersecting;
+      if(visible && !raf) loop();
+    }, {threshold: 0.05}).observe(holder);
+    document.addEventListener('visibilitychange', ()=>{
+      if(!document.hidden && visible && !raf) loop();
+    });
+
+    /* ── resize ── */
+    let rT;
+    window.addEventListener('resize', ()=>{
+      clearTimeout(rT);
+      rT = setTimeout(()=>{
+        camera.aspect = W()/H();
+        camera.updateProjectionMatrix();
+        renderer.setSize(W(), H());
+      }, 150);
+    }, {passive:true});
+
+    /* ── render loop ── */
+    const clock = new THREE.Clock();
+    function loop(){
+      if(!visible || document.hidden){ raf = null; return; }
+      raf = requestAnimationFrame(loop);
+      const t = clock.getElapsedTime();
+      targetY += velY;                                     // slow constant spin
+      userSpun *= 0.94;                                    // drag inertia decays
+      glasses.rotation.y = targetY + userSpun * 6;
+      glasses.rotation.x = 0.06 + Math.sin(t * 0.7) * 0.05; // gentle bob
+      glasses.position.y = Math.sin(t * 0.9) * 0.08;
+      renderer.render(scene, camera);
+    }
+    loop();
+
+    holder.classList.add('ready');
+    heroRight.classList.add('has3d');
+  }
+})();
 </script>
 </body>
 </html>
